@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CinemaManagementDemo/CinemaManagementDemo.csproj" />
+  <Project Path="CinemaManagementLibrary/CinemaManagementLibrary.csproj" />
+</Solution>
