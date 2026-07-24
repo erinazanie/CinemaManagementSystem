@@ -32,6 +32,9 @@
             label1 = new Label();
             button1 = new Button();
             panel2 = new Panel();
+            producer = new Label();
+            releaseYear = new Label();
+            ageLimit = new Label();
             picPoster = new PictureBox();
             lblDescription = new Label();
             lblGenre = new Label();
@@ -90,20 +93,56 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(45, 40, 62);
+            panel2.Controls.Add(producer);
+            panel2.Controls.Add(releaseYear);
+            panel2.Controls.Add(ageLimit);
             panel2.Controls.Add(picPoster);
             panel2.Controls.Add(lblDescription);
             panel2.Controls.Add(lblGenre);
             panel2.Controls.Add(lblMovieTitle);
             panel2.Location = new Point(20, 70);
             panel2.Name = "panel2";
-            panel2.Size = new Size(260, 470);
+            panel2.Size = new Size(260, 560);
             panel2.TabIndex = 1;
+            // 
+            // producer
+            // 
+            producer.AutoSize = true;
+            producer.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            producer.ForeColor = Color.Gray;
+            producer.Location = new Point(15, 368);
+            producer.Name = "producer";
+            producer.Size = new Size(170, 17);
+            producer.TabIndex = 6;
+            producer.Text = "Producer: Animonsta Studio";
+            // 
+            // releaseYear
+            // 
+            releaseYear.AutoSize = true;
+            releaseYear.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            releaseYear.ForeColor = Color.Gray;
+            releaseYear.Location = new Point(15, 348);
+            releaseYear.Name = "releaseYear";
+            releaseYear.Size = new Size(117, 17);
+            releaseYear.TabIndex = 5;
+            releaseYear.Text = "Release Year: 2024";
+            // 
+            // ageLimit
+            // 
+            ageLimit.AutoSize = true;
+            ageLimit.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ageLimit.ForeColor = Color.Gray;
+            ageLimit.Location = new Point(15, 328);
+            ageLimit.Name = "ageLimit";
+            ageLimit.Size = new Size(90, 17);
+            ageLimit.TabIndex = 4;
+            ageLimit.Text = "Age Limit: P13";
             // 
             // picPoster
             // 
             picPoster.Location = new Point(15, 15);
             picPoster.Name = "picPoster";
-            picPoster.Size = new Size(230, 200);
+            picPoster.Size = new Size(230, 250);
             picPoster.SizeMode = PictureBoxSizeMode.Zoom;
             picPoster.TabIndex = 3;
             picPoster.TabStop = false;
@@ -111,9 +150,9 @@
             // lblDescription
             // 
             lblDescription.ForeColor = Color.LightGray;
-            lblDescription.Location = new Point(15, 280);
+            lblDescription.Location = new Point(15, 392);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(230, 170);
+            lblDescription.Size = new Size(230, 100);
             lblDescription.TabIndex = 2;
             lblDescription.Text = "Follow Papa Zola on an epic comedy-packed adventure as he saves the galaxy!";
             // 
@@ -122,7 +161,7 @@
             lblGenre.AutoSize = true;
             lblGenre.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblGenre.ForeColor = Color.Gray;
-            lblGenre.Location = new Point(15, 255);
+            lblGenre.Location = new Point(15, 308);
             lblGenre.Name = "lblGenre";
             lblGenre.Size = new Size(122, 17);
             lblGenre.TabIndex = 1;
@@ -133,7 +172,7 @@
             lblMovieTitle.AutoSize = true;
             lblMovieTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMovieTitle.ForeColor = Color.White;
-            lblMovieTitle.Location = new Point(15, 225);
+            lblMovieTitle.Location = new Point(15, 278);
             lblMovieTitle.Name = "lblMovieTitle";
             lblMovieTitle.Size = new Size(211, 28);
             lblMovieTitle.TabIndex = 0;
@@ -153,7 +192,7 @@
             panel3.Controls.Add(label2);
             panel3.Location = new Point(300, 70);
             panel3.Name = "panel3";
-            panel3.Size = new Size(560, 470);
+            panel3.Size = new Size(560, 560);
             panel3.TabIndex = 2;
             // 
             // btnNextSnacks
@@ -162,7 +201,7 @@
             btnNextSnacks.FlatStyle = FlatStyle.Flat;
             btnNextSnacks.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNextSnacks.ForeColor = Color.White;
-            btnNextSnacks.Location = new Point(360, 410);
+            btnNextSnacks.Location = new Point(360, 503);
             btnNextSnacks.Name = "btnNextSnacks";
             btnNextSnacks.Size = new Size(185, 40);
             btnNextSnacks.TabIndex = 8;
@@ -174,7 +213,7 @@
             // 
             lblSelectedSeats.AutoSize = true;
             lblSelectedSeats.ForeColor = Color.FromArgb(162, 89, 255);
-            lblSelectedSeats.Location = new Point(15, 365);
+            lblSelectedSeats.Location = new Point(15, 415);
             lblSelectedSeats.Name = "lblSelectedSeats";
             lblSelectedSeats.Size = new Size(215, 20);
             lblSelectedSeats.TabIndex = 7;
@@ -183,7 +222,7 @@
             // pnlSeats
             // 
             pnlSeats.BackColor = Color.FromArgb(30, 27, 46);
-            pnlSeats.Location = new Point(65, 115);
+            pnlSeats.Location = new Point(65, 150);
             pnlSeats.Name = "pnlSeats";
             pnlSeats.Padding = new Padding(10);
             pnlSeats.Size = new Size(430, 230);
@@ -193,7 +232,7 @@
             // 
             label3.BackColor = Color.FromArgb(60, 54, 80);
             label3.ForeColor = Color.Gray;
-            label3.Location = new Point(15, 80);
+            label3.Location = new Point(15, 110);
             label3.Name = "label3";
             label3.Size = new Size(530, 20);
             label3.TabIndex = 5;
@@ -204,7 +243,7 @@
             // 
             rbTime4.AutoSize = true;
             rbTime4.ForeColor = Color.White;
-            rbTime4.Location = new Point(455, 46);
+            rbTime4.Location = new Point(455, 55);
             rbTime4.Name = "rbTime4";
             rbTime4.Size = new Size(90, 24);
             rbTime4.TabIndex = 4;
@@ -215,7 +254,7 @@
             // 
             rbTime3.AutoSize = true;
             rbTime3.ForeColor = Color.White;
-            rbTime3.Location = new Point(319, 46);
+            rbTime3.Location = new Point(319, 55);
             rbTime3.Name = "rbTime3";
             rbTime3.Size = new Size(90, 24);
             rbTime3.TabIndex = 3;
@@ -226,7 +265,7 @@
             // 
             rbTime2.AutoSize = true;
             rbTime2.ForeColor = Color.White;
-            rbTime2.Location = new Point(176, 46);
+            rbTime2.Location = new Point(176, 55);
             rbTime2.Name = "rbTime2";
             rbTime2.Size = new Size(90, 24);
             rbTime2.TabIndex = 2;
@@ -238,7 +277,7 @@
             rbTime1.AutoSize = true;
             rbTime1.Checked = true;
             rbTime1.ForeColor = Color.White;
-            rbTime1.Location = new Point(40, 46);
+            rbTime1.Location = new Point(40, 55);
             rbTime1.Name = "rbTime1";
             rbTime1.Size = new Size(90, 24);
             rbTime1.TabIndex = 1;
@@ -262,7 +301,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 27, 46);
-            ClientSize = new Size(882, 553);
+            ClientSize = new Size(882, 653);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -299,5 +338,8 @@
         private Button btnNextSnacks;
         private Label lblSelectedSeats;
         private FlowLayoutPanel pnlSeats;
+        private Label ageLimit;
+        private Label producer;
+        private Label releaseYear;
     }
 }

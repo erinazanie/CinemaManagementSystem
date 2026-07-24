@@ -35,5 +35,11 @@ namespace CinemaManagementDemo
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            // Reuse existing handler that passes movie data to the details form
+            button1_Click(sender, e);
+        }
     }
 }

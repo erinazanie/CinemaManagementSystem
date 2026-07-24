@@ -31,35 +31,12 @@
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
-            label2 = new Label();
-            flpNowShowing = new FlowLayoutPanel();
-            panel3 = new Panel();
-            pictureBox1 = new PictureBox();
-            label3 = new Label();
-            label4 = new Label();
-            button1 = new Button();
-            panel4 = new Panel();
-            button2 = new Button();
-            label5 = new Label();
-            label6 = new Label();
-            pictureBox2 = new PictureBox();
-            panel5 = new Panel();
-            button3 = new Button();
-            label7 = new Label();
-            label8 = new Label();
-            pictureBox3 = new PictureBox();
-            panel6 = new Panel();
-            button4 = new Button();
-            label9 = new Label();
-            label10 = new Label();
-            pictureBox4 = new PictureBox();
-            label11 = new Label();
             flpComingSoon = new FlowLayoutPanel();
             panel7 = new Panel();
-            pictureBox5 = new PictureBox();
-            label12 = new Label();
-            label13 = new Label();
             button5 = new Button();
+            label13 = new Label();
+            label12 = new Label();
+            pictureBox5 = new PictureBox();
             panel8 = new Panel();
             button6 = new Button();
             label14 = new Label();
@@ -75,17 +52,31 @@
             label18 = new Label();
             label19 = new Label();
             pictureBox8 = new PictureBox();
+            label11 = new Label();
+            flpNowShowing = new FlowLayoutPanel();
+            panel3 = new Panel();
+            button1 = new Button();
+            label4 = new Label();
+            label3 = new Label();
+            pictureBox1 = new PictureBox();
+            panel4 = new Panel();
+            button2 = new Button();
+            label5 = new Label();
+            label6 = new Label();
+            pictureBox2 = new PictureBox();
+            panel5 = new Panel();
+            button3 = new Button();
+            label7 = new Label();
+            label8 = new Label();
+            pictureBox3 = new PictureBox();
+            panel6 = new Panel();
+            button4 = new Button();
+            label9 = new Label();
+            label10 = new Label();
+            pictureBox4 = new PictureBox();
+            label2 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            flpNowShowing.SuspendLayout();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             flpComingSoon.SuspendLayout();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -95,6 +86,15 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            flpNowShowing.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -131,16 +131,255 @@
             panel2.Size = new Size(882, 593);
             panel2.TabIndex = 1;
             // 
-            // label2
+            // flpComingSoon
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(20, 15);
-            label2.Name = "label2";
-            label2.Size = new Size(166, 28);
-            label2.TabIndex = 0;
-            label2.Text = "NOW SHOWING";
+            flpComingSoon.Controls.Add(panel7);
+            flpComingSoon.Controls.Add(panel8);
+            flpComingSoon.Controls.Add(panel9);
+            flpComingSoon.Controls.Add(panel10);
+            flpComingSoon.Location = new Point(20, 340);
+            flpComingSoon.Name = "flpComingSoon";
+            flpComingSoon.Size = new Size(840, 230);
+            flpComingSoon.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(45, 40, 62);
+            panel7.Controls.Add(button5);
+            panel7.Controls.Add(label13);
+            panel7.Controls.Add(label12);
+            panel7.Controls.Add(pictureBox5);
+            panel7.Location = new Point(12, 10);
+            panel7.Margin = new Padding(12, 10, 12, 10);
+            panel7.Name = "panel7";
+            panel7.Padding = new Padding(10);
+            panel7.Size = new Size(185, 210);
+            panel7.TabIndex = 0;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(60, 54, 80);
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(10, 165);
+            button5.Name = "button5";
+            button5.Size = new Size(165, 28);
+            button5.TabIndex = 3;
+            button5.Text = "NOTIFY ME";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.Gray;
+            label13.Location = new Point(8, 137);
+            label13.Name = "label13";
+            label13.Size = new Size(133, 17);
+            label13.TabIndex = 2;
+            label13.Text = "Release: 15 Aug 2026";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(8, 115);
+            label12.Name = "label12";
+            label12.Size = new Size(107, 20);
+            label12.TabIndex = 1;
+            label12.Text = "Jana Nayagan";
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.FromArgb(60, 54, 80);
+            pictureBox5.Location = new Point(10, 10);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(165, 100);
+            pictureBox5.TabIndex = 0;
+            pictureBox5.TabStop = false;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(45, 40, 62);
+            panel8.Controls.Add(button6);
+            panel8.Controls.Add(label14);
+            panel8.Controls.Add(label15);
+            panel8.Controls.Add(pictureBox6);
+            panel8.Location = new Point(221, 10);
+            panel8.Margin = new Padding(12, 10, 12, 10);
+            panel8.Name = "panel8";
+            panel8.Padding = new Padding(10);
+            panel8.Size = new Size(185, 210);
+            panel8.TabIndex = 1;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(60, 54, 80);
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.ForeColor = Color.White;
+            button6.Location = new Point(10, 165);
+            button6.Name = "button6";
+            button6.Size = new Size(165, 28);
+            button6.TabIndex = 3;
+            button6.Text = "NOTIFY ME";
+            button6.UseVisualStyleBackColor = false;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.Gray;
+            label14.Location = new Point(8, 137);
+            label14.Name = "label14";
+            label14.Size = new Size(133, 17);
+            label14.TabIndex = 2;
+            label14.Text = "Release: 15 Aug 2026";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(8, 115);
+            label15.Name = "label15";
+            label15.Size = new Size(107, 20);
+            label15.TabIndex = 1;
+            label15.Text = "Jana Nayagan";
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.FromArgb(60, 54, 80);
+            pictureBox6.Location = new Point(10, 10);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(165, 100);
+            pictureBox6.TabIndex = 0;
+            pictureBox6.TabStop = false;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(45, 40, 62);
+            panel9.Controls.Add(button7);
+            panel9.Controls.Add(label16);
+            panel9.Controls.Add(label17);
+            panel9.Controls.Add(pictureBox7);
+            panel9.Location = new Point(430, 10);
+            panel9.Margin = new Padding(12, 10, 12, 10);
+            panel9.Name = "panel9";
+            panel9.Padding = new Padding(10);
+            panel9.Size = new Size(185, 210);
+            panel9.TabIndex = 2;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(60, 54, 80);
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.ForeColor = Color.White;
+            button7.Location = new Point(10, 165);
+            button7.Name = "button7";
+            button7.Size = new Size(165, 28);
+            button7.TabIndex = 3;
+            button7.Text = "NOTIFY ME";
+            button7.UseVisualStyleBackColor = false;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.ForeColor = Color.Gray;
+            label16.Location = new Point(8, 137);
+            label16.Name = "label16";
+            label16.Size = new Size(133, 17);
+            label16.TabIndex = 2;
+            label16.Text = "Release: 15 Aug 2026";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(8, 115);
+            label17.Name = "label17";
+            label17.Size = new Size(107, 20);
+            label17.TabIndex = 1;
+            label17.Text = "Jana Nayagan";
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.FromArgb(60, 54, 80);
+            pictureBox7.Location = new Point(10, 10);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(165, 100);
+            pictureBox7.TabIndex = 0;
+            pictureBox7.TabStop = false;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(45, 40, 62);
+            panel10.Controls.Add(button8);
+            panel10.Controls.Add(label18);
+            panel10.Controls.Add(label19);
+            panel10.Controls.Add(pictureBox8);
+            panel10.Location = new Point(639, 10);
+            panel10.Margin = new Padding(12, 10, 12, 10);
+            panel10.Name = "panel10";
+            panel10.Padding = new Padding(10);
+            panel10.Size = new Size(185, 210);
+            panel10.TabIndex = 3;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.FromArgb(60, 54, 80);
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.ForeColor = Color.White;
+            button8.Location = new Point(10, 165);
+            button8.Name = "button8";
+            button8.Size = new Size(165, 28);
+            button8.TabIndex = 3;
+            button8.Text = "NOTIFY ME";
+            button8.UseVisualStyleBackColor = false;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.ForeColor = Color.Gray;
+            label18.Location = new Point(8, 137);
+            label18.Name = "label18";
+            label18.Size = new Size(133, 17);
+            label18.TabIndex = 2;
+            label18.Text = "Release: 15 Aug 2026";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(8, 115);
+            label19.Name = "label19";
+            label19.Size = new Size(107, 20);
+            label19.TabIndex = 1;
+            label19.Text = "Jana Nayagan";
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.BackColor = Color.FromArgb(60, 54, 80);
+            pictureBox8.Location = new Point(10, 10);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(165, 100);
+            pictureBox8.TabIndex = 0;
+            pictureBox8.TabStop = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(20, 300);
+            label11.Name = "label11";
+            label11.Size = new Size(157, 28);
+            label11.TabIndex = 2;
+            label11.Text = "COMING SOON";
             // 
             // flpNowShowing
             // 
@@ -167,37 +406,6 @@
             panel3.Size = new Size(185, 210);
             panel3.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.FromArgb(0, 0, 0, 0);
-            pictureBox1.Location = new Point(10, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(165, 100);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(8, 115);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 20);
-            label3.TabIndex = 1;
-            label3.Text = "Mat Kilau";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Gray;
-            label4.Location = new Point(8, 137);
-            label4.Name = "label4";
-            label4.Size = new Size(100, 17);
-            label4.TabIndex = 2;
-            label4.Text = "Action • 2h 00m";
-            // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(162, 89, 255);
@@ -209,6 +417,38 @@
             button1.TabIndex = 3;
             button1.Text = "VIEW";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Gray;
+            label4.Location = new Point(8, 137);
+            label4.Name = "label4";
+            label4.Size = new Size(122, 17);
+            label4.TabIndex = 2;
+            label4.Text = "Animation • 1h 52m";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(8, 115);
+            label3.Name = "label3";
+            label3.Size = new Size(154, 20);
+            label3.TabIndex = 1;
+            label3.Text = "Papa Zola The Movie";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(0, 0, 0, 0);
+            pictureBox1.Location = new Point(10, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(165, 100);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // panel4
             // 
@@ -382,255 +622,16 @@
             pictureBox4.TabIndex = 0;
             pictureBox4.TabStop = false;
             // 
-            // label11
+            // label2
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(20, 300);
-            label11.Name = "label11";
-            label11.Size = new Size(157, 28);
-            label11.TabIndex = 2;
-            label11.Text = "COMING SOON";
-            // 
-            // flpComingSoon
-            // 
-            flpComingSoon.Controls.Add(panel7);
-            flpComingSoon.Controls.Add(panel8);
-            flpComingSoon.Controls.Add(panel9);
-            flpComingSoon.Controls.Add(panel10);
-            flpComingSoon.Location = new Point(20, 340);
-            flpComingSoon.Name = "flpComingSoon";
-            flpComingSoon.Size = new Size(840, 230);
-            flpComingSoon.TabIndex = 3;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.FromArgb(45, 40, 62);
-            panel7.Controls.Add(button5);
-            panel7.Controls.Add(label13);
-            panel7.Controls.Add(label12);
-            panel7.Controls.Add(pictureBox5);
-            panel7.Location = new Point(12, 10);
-            panel7.Margin = new Padding(12, 10, 12, 10);
-            panel7.Name = "panel7";
-            panel7.Padding = new Padding(10);
-            panel7.Size = new Size(185, 210);
-            panel7.TabIndex = 0;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.BackColor = Color.FromArgb(60, 54, 80);
-            pictureBox5.Location = new Point(10, 10);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(165, 100);
-            pictureBox5.TabIndex = 0;
-            pictureBox5.TabStop = false;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(8, 115);
-            label12.Name = "label12";
-            label12.Size = new Size(107, 20);
-            label12.TabIndex = 1;
-            label12.Text = "Jana Nayagan";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.Gray;
-            label13.Location = new Point(8, 137);
-            label13.Name = "label13";
-            label13.Size = new Size(133, 17);
-            label13.TabIndex = 2;
-            label13.Text = "Release: 15 Aug 2026";
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(60, 54, 80);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(10, 165);
-            button5.Name = "button5";
-            button5.Size = new Size(165, 28);
-            button5.TabIndex = 3;
-            button5.Text = "NOTIFY ME";
-            button5.UseVisualStyleBackColor = false;
-            // 
-            // panel8
-            // 
-            panel8.BackColor = Color.FromArgb(45, 40, 62);
-            panel8.Controls.Add(button6);
-            panel8.Controls.Add(label14);
-            panel8.Controls.Add(label15);
-            panel8.Controls.Add(pictureBox6);
-            panel8.Location = new Point(221, 10);
-            panel8.Margin = new Padding(12, 10, 12, 10);
-            panel8.Name = "panel8";
-            panel8.Padding = new Padding(10);
-            panel8.Size = new Size(185, 210);
-            panel8.TabIndex = 1;
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.FromArgb(60, 54, 80);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(10, 165);
-            button6.Name = "button6";
-            button6.Size = new Size(165, 28);
-            button6.TabIndex = 3;
-            button6.Text = "NOTIFY ME";
-            button6.UseVisualStyleBackColor = false;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.Gray;
-            label14.Location = new Point(8, 137);
-            label14.Name = "label14";
-            label14.Size = new Size(133, 17);
-            label14.TabIndex = 2;
-            label14.Text = "Release: 15 Aug 2026";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.White;
-            label15.Location = new Point(8, 115);
-            label15.Name = "label15";
-            label15.Size = new Size(107, 20);
-            label15.TabIndex = 1;
-            label15.Text = "Jana Nayagan";
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.BackColor = Color.FromArgb(60, 54, 80);
-            pictureBox6.Location = new Point(10, 10);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(165, 100);
-            pictureBox6.TabIndex = 0;
-            pictureBox6.TabStop = false;
-            // 
-            // panel9
-            // 
-            panel9.BackColor = Color.FromArgb(45, 40, 62);
-            panel9.Controls.Add(button7);
-            panel9.Controls.Add(label16);
-            panel9.Controls.Add(label17);
-            panel9.Controls.Add(pictureBox7);
-            panel9.Location = new Point(430, 10);
-            panel9.Margin = new Padding(12, 10, 12, 10);
-            panel9.Name = "panel9";
-            panel9.Padding = new Padding(10);
-            panel9.Size = new Size(185, 210);
-            panel9.TabIndex = 2;
-            // 
-            // button7
-            // 
-            button7.BackColor = Color.FromArgb(60, 54, 80);
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.ForeColor = Color.White;
-            button7.Location = new Point(10, 165);
-            button7.Name = "button7";
-            button7.Size = new Size(165, 28);
-            button7.TabIndex = 3;
-            button7.Text = "NOTIFY ME";
-            button7.UseVisualStyleBackColor = false;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.Gray;
-            label16.Location = new Point(8, 137);
-            label16.Name = "label16";
-            label16.Size = new Size(133, 17);
-            label16.TabIndex = 2;
-            label16.Text = "Release: 15 Aug 2026";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.White;
-            label17.Location = new Point(8, 115);
-            label17.Name = "label17";
-            label17.Size = new Size(107, 20);
-            label17.TabIndex = 1;
-            label17.Text = "Jana Nayagan";
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.BackColor = Color.FromArgb(60, 54, 80);
-            pictureBox7.Location = new Point(10, 10);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(165, 100);
-            pictureBox7.TabIndex = 0;
-            pictureBox7.TabStop = false;
-            // 
-            // panel10
-            // 
-            panel10.BackColor = Color.FromArgb(45, 40, 62);
-            panel10.Controls.Add(button8);
-            panel10.Controls.Add(label18);
-            panel10.Controls.Add(label19);
-            panel10.Controls.Add(pictureBox8);
-            panel10.Location = new Point(639, 10);
-            panel10.Margin = new Padding(12, 10, 12, 10);
-            panel10.Name = "panel10";
-            panel10.Padding = new Padding(10);
-            panel10.Size = new Size(185, 210);
-            panel10.TabIndex = 3;
-            // 
-            // button8
-            // 
-            button8.BackColor = Color.FromArgb(60, 54, 80);
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.ForeColor = Color.White;
-            button8.Location = new Point(10, 165);
-            button8.Name = "button8";
-            button8.Size = new Size(165, 28);
-            button8.TabIndex = 3;
-            button8.Text = "NOTIFY ME";
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.Gray;
-            label18.Location = new Point(8, 137);
-            label18.Name = "label18";
-            label18.Size = new Size(133, 17);
-            label18.TabIndex = 2;
-            label18.Text = "Release: 15 Aug 2026";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.ForeColor = Color.White;
-            label19.Location = new Point(8, 115);
-            label19.Name = "label19";
-            label19.Size = new Size(107, 20);
-            label19.TabIndex = 1;
-            label19.Text = "Jana Nayagan";
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.BackColor = Color.FromArgb(60, 54, 80);
-            pictureBox8.Location = new Point(10, 10);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(165, 100);
-            pictureBox8.TabIndex = 0;
-            pictureBox8.TabStop = false;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(20, 15);
+            label2.Name = "label2";
+            label2.Size = new Size(166, 28);
+            label2.TabIndex = 0;
+            label2.Text = "NOW SHOWING";
             // 
             // Movies
             // 
@@ -647,19 +648,6 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            flpNowShowing.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             flpComingSoon.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
@@ -673,6 +661,19 @@
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            flpNowShowing.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
