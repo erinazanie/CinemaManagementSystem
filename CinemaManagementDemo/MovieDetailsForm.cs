@@ -105,21 +105,31 @@ namespace CinemaManagementDemo
             this.Close(); // Return to Form1
         }
 
-        private void btnNextSnacks_Click(object sender, EventArgs e)
-        {
-            if (selectedSeats.Count == 0)
-            {
-                MessageBox.Show("Please select at least one seat before proceeding!", "Select Seats", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // TODO: Open SnackSelectionForm here!
-            MessageBox.Show($"Proceeding to Snacks with seats: {string.Join(", ", selectedSeats)}", "Next Step");
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnNextSnacks_Click(object sender, EventArgs e)
+        {
+            // Check if seats have been selected (e.g., check if your selected seats list/variable is empty)
+            // Replace 'selectedSeats' with whatever variable or list you use to track seats
+            if (selectedSeats == null || selectedSeats.Count == 0)
+            {
+                MessageBox.Show(
+                    "Please select at least one seat before proceeding!",
+                    "Seat Selection Required",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return; // Stop execution so the form doesn't open
+            }
+
+            // If seats are selected, open the Snack Selection Form
+            SnackSelectionForm snackPage = new SnackSelectionForm();
+            this.Hide();
+            snackPage.ShowDialog();
+            this.Show();
         }
     }
 }

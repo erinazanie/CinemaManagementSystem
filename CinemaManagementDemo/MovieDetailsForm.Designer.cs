@@ -168,6 +168,7 @@
             btnNextSnacks.TabIndex = 8;
             btnNextSnacks.Text = "Choose Snacks ➔";
             btnNextSnacks.UseVisualStyleBackColor = false;
+            btnNextSnacks.Click += btnNextSnacks_Click;
             // 
             // lblSelectedSeats
             // 
