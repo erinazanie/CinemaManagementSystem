@@ -27,8 +27,6 @@ namespace CinemaManagementDemo
                 new { Name = "🍿 Combo A \n(Popcorn + Drink)", Price = 18.00m },
                 new { Name = "🍿 Caramel Popcorn (L)", Price = 14.00m },
                 new { Name = "🥤 Soft Drink (L)", Price = 7.00m },
-                new { Name = "🧀 Hot Nachos & Cheese", Price = 12.00m },
-                new { Name = "🍫 Chocolate Bar", Price = 6.00m },
                 new { Name = "💧 Mineral Water", Price = 4.00m }
             };
 
@@ -156,6 +154,8 @@ namespace CinemaManagementDemo
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
+            if (!ValidateContactInfo()) return;
+
             MessageBox.Show("Booking Successful! Enjoy your movie 🍿🎬", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -183,6 +183,9 @@ namespace CinemaManagementDemo
                 }
             }
 
+            // Validate contact details before completing checkout
+            if (!ValidateContactInfo()) return;
+
             // Proceed to successful checkout
             MessageBox.Show(
                 "Booking Successful! Enjoy your movie 🍿🎬",
@@ -190,6 +193,32 @@ namespace CinemaManagementDemo
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );
+        }
+
+        private bool ValidateContactInfo()
+        {
+            string customerName = name.Text?.Trim() ?? string.Empty;
+            string customerEmail = email.Text?.Trim() ?? string.Empty;
+
+            if (string.IsNullOrEmpty(customerName) || string.IsNullOrEmpty(customerEmail))
+            {
+                MessageBox.Show(
+                    "Please enter your name and email before proceeding to checkout.",
+                    "Missing Information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
+                // Focus the first empty field
+                if (string.IsNullOrEmpty(customerName))
+                    name.Focus();
+                else
+                    email.Focus();
+
+                return false;
+            }
+
+            return true;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

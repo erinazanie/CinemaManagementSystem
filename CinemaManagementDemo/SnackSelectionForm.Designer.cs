@@ -32,6 +32,9 @@
             btnBack = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
             btnCheckout = new Button();
             lblGrandTotal = new Label();
             lstOrderItems = new ListBox();
@@ -40,12 +43,16 @@
             label2 = new Label();
             panel3 = new Panel();
             pnlSnackGrid = new FlowLayoutPanel();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
+            panel5 = new Panel();
+            email = new TextBox();
+            name = new TextBox();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -96,9 +103,36 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(590, 70);
             panel2.Name = "panel2";
-            panel2.Size = new Size(270, 560);
+            panel2.Size = new Size(270, 562);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // label5
+            // 
+            label5.ForeColor = Color.LightGray;
+            label5.Location = new Point(15, 105);
+            label5.Name = "label5";
+            label5.Size = new Size(240, 20);
+            label5.TabIndex = 8;
+            label5.Text = "Time: 12:30 PM";
+            // 
+            // label4
+            // 
+            label4.ForeColor = Color.LightGray;
+            label4.Location = new Point(15, 85);
+            label4.Name = "label4";
+            label4.Size = new Size(240, 20);
+            label4.TabIndex = 7;
+            label4.Text = "Hall: H";
+            // 
+            // label3
+            // 
+            label3.ForeColor = Color.LightGray;
+            label3.Location = new Point(15, 65);
+            label3.Name = "label3";
+            label3.Size = new Size(240, 20);
+            label3.TabIndex = 6;
+            label3.Text = "Seats: A1, A2\r\n";
             // 
             // btnCheckout
             // 
@@ -170,7 +204,7 @@
             panel3.Controls.Add(pnlSnackGrid);
             panel3.Location = new Point(20, 70);
             panel3.Name = "panel3";
-            panel3.Size = new Size(550, 560);
+            panel3.Size = new Size(550, 391);
             panel3.TabIndex = 2;
             // 
             // pnlSnackGrid
@@ -179,35 +213,74 @@
             pnlSnackGrid.BackColor = Color.FromArgb(30, 27, 46);
             pnlSnackGrid.Location = new Point(15, 15);
             pnlSnackGrid.Name = "pnlSnackGrid";
-            pnlSnackGrid.Size = new Size(520, 530);
+            pnlSnackGrid.Size = new Size(520, 358);
             pnlSnackGrid.TabIndex = 0;
             // 
-            // label3
+            // panel5
             // 
-            label3.ForeColor = Color.LightGray;
-            label3.Location = new Point(15, 65);
-            label3.Name = "label3";
-            label3.Size = new Size(240, 20);
-            label3.TabIndex = 6;
-            label3.Text = "Seats: A1, A2\r\n";
+            panel5.BackColor = Color.FromArgb(45, 40, 62);
+            panel5.Controls.Add(email);
+            panel5.Controls.Add(name);
+            panel5.Controls.Add(label8);
+            panel5.Controls.Add(label7);
+            panel5.Controls.Add(label6);
+            panel5.Location = new Point(20, 479);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(550, 153);
+            panel5.TabIndex = 3;
             // 
-            // label4
+            // email
             // 
-            label4.ForeColor = Color.LightGray;
-            label4.Location = new Point(15, 85);
-            label4.Name = "label4";
-            label4.Size = new Size(240, 20);
-            label4.TabIndex = 7;
-            label4.Text = "Hall: H";
+            email.BackColor = Color.FromArgb(60, 54, 80);
+            email.BorderStyle = BorderStyle.FixedSingle;
+            email.ForeColor = Color.White;
+            email.Location = new Point(100, 103);
+            email.Name = "email";
+            email.Size = new Size(435, 27);
+            email.TabIndex = 4;
             // 
-            // label5
+            // name
             // 
-            label5.ForeColor = Color.LightGray;
-            label5.Location = new Point(15, 105);
-            label5.Name = "label5";
-            label5.Size = new Size(240, 20);
-            label5.TabIndex = 8;
-            label5.Text = "Time: 12:30 PM";
+            name.BackColor = Color.FromArgb(60, 54, 80);
+            name.BorderStyle = BorderStyle.FixedSingle;
+            name.ForeColor = Color.White;
+            name.Location = new Point(100, 54);
+            name.Name = "name";
+            name.Size = new Size(435, 27);
+            name.TabIndex = 3;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(15, 9);
+            label8.Name = "label8";
+            label8.Size = new Size(174, 28);
+            label8.TabIndex = 2;
+            label8.Text = "Customer Details";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(35, 106);
+            label7.Name = "label7";
+            label7.Size = new Size(51, 20);
+            label7.TabIndex = 1;
+            label7.Text = "Email:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(35, 58);
+            label6.Name = "label6";
+            label6.Size = new Size(59, 20);
+            label6.TabIndex = 0;
+            label6.Text = "Name: ";
             // 
             // SnackSelectionForm
             // 
@@ -215,6 +288,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 27, 46);
             ClientSize = new Size(882, 653);
+            Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -226,6 +300,8 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -246,5 +322,11 @@
         private Label label5;
         private Label label4;
         private Label label3;
+        private Panel panel5;
+        private TextBox email;
+        private TextBox name;
+        private Label label8;
+        private Label label7;
+        private Label label6;
     }
 }
