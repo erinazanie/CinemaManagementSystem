@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace CinemaManagementDemo
 {
-    public partial class Form1 : Form
+    public partial class Movies : Form
     {
-        public Form1()
+        public Movies()
         {
             InitializeComponent();
         }
@@ -29,6 +29,11 @@ namespace CinemaManagementDemo
             this.Hide(); // Hide main menu
             detailsPage.ShowDialog(); // Display Details Form
             this.Show(); // Re-show main menu when user returns back
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
