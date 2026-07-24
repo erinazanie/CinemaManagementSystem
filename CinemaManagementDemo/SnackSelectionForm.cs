@@ -166,33 +166,33 @@ namespace CinemaManagementDemo
 
         private void btnCheckout_Click_1(object sender, EventArgs e)
         {
-            // Check if the user hasn't selected any snacks
+            // Check if no snacks were selected
             if (snackCart.Count == 0)
             {
                 DialogResult result = MessageBox.Show(
-                    "You haven't selected any snacks or beverages. Are you sure you want to proceed to checkout without snacks?",
+                    "You haven't selected any snacks or beverages.\n\nProceed without snacks?",
                     "No Snacks Selected",
                     MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                );
+                    MessageBoxIcon.Question);
 
-                // If user clicks "No", cancel checkout so they can pick snacks
                 if (result == DialogResult.No)
-                {
                     return;
-                }
             }
 
-            // Validate contact details before completing checkout
-            if (!ValidateContactInfo()) return;
+            // Validate customer details
+            if (!ValidateContactInfo())
+                return;
 
-            // Proceed to successful checkout
-            MessageBox.Show(
-                "Booking Successful! Enjoy your movie 🍿🎬",
-                "Success",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            // Open the Digital Ticket page
+            TicketReceiptForm ticketForm = new TicketReceiptForm();
+
+            // Hide this form while the ticket page is open
+            this.Hide();
+
+            ticketForm.ShowDialog();
+
+            // Close this form after returning from the ticket page
+            this.Close();
         }
 
         private bool ValidateContactInfo()
