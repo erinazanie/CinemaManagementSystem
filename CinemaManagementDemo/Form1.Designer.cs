@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            Search = new TextBox();
             label1 = new Label();
-            textBox1 = new TextBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel2 = new Panel();
-            pictureBox1 = new PictureBox();
-            label2 = new Label();
-            label3 = new Label();
             button1 = new Button();
+            label3 = new Label();
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
             panel3 = new Panel();
             button2 = new Button();
             label4 = new Label();
@@ -95,7 +95,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(45, 40, 62);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(Search);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -103,6 +103,16 @@
             panel1.Size = new Size(882, 60);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // Search
+            // 
+            Search.BackColor = Color.FromArgb(30, 27, 46);
+            Search.ForeColor = Color.Gray;
+            Search.Location = new Point(345, 18);
+            Search.Name = "Search";
+            Search.Size = new Size(220, 27);
+            Search.TabIndex = 1;
+            Search.Text = "Search movies...";
             // 
             // label1
             // 
@@ -114,16 +124,6 @@
             label1.Size = new Size(247, 28);
             label1.TabIndex = 0;
             label1.Text = "🎬 STARLIGHT CINEMAS";
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(30, 27, 46);
-            textBox1.ForeColor = Color.Gray;
-            textBox1.Location = new Point(345, 18);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(220, 27);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Search movies...";
             // 
             // flowLayoutPanel1
             // 
@@ -156,38 +156,6 @@
             panel2.Size = new Size(185, 210);
             panel2.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.FromArgb(60, 54, 80);
-            pictureBox1.Location = new Point(10, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(165, 100);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(8, 115);
-            label2.Name = "label2";
-            label2.Size = new Size(154, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Papa Zola The Movie";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Gray;
-            label3.Location = new Point(8, 135);
-            label3.Name = "label3";
-            label3.Size = new Size(122, 17);
-            label3.TabIndex = 2;
-            label3.Text = "Animation • 1h 52m";
-            // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(162, 89, 255);
@@ -200,6 +168,39 @@
             button1.TabIndex = 3;
             button1.Text = "View";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Gray;
+            label3.Location = new Point(8, 135);
+            label3.Name = "label3";
+            label3.Size = new Size(122, 17);
+            label3.TabIndex = 2;
+            label3.Text = "Animation • 1h 52m";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(8, 115);
+            label2.Name = "label2";
+            label2.Size = new Size(154, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Papa Zola The Movie";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(60, 54, 80);
+            pictureBox1.Location = new Point(10, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(165, 100);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -652,7 +653,7 @@
         #endregion
 
         private Panel panel1;
-        private TextBox textBox1;
+        private TextBox Search;
         private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel2;
