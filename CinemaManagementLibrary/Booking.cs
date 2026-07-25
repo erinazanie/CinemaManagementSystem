@@ -9,17 +9,26 @@ namespace CinemaManagementLibrary
         public string bookingID { get; set; }
         public Customer customer { get; set; }
         public ShowTime showTime { get; set; }
-        public List<Snack> snack { get; set; } = new List<Snack>();
+        public List<Snack> snacks { get; set; } = new List<Snack>();
         public List<Ticket> tickets { get; set; } = new List<Ticket>();
-        public double totalPrice { get; set; }
-
-        public double calculateTotalPrice()
+        public double totalPrice 
         {
-            double sum = 0;
-            foreach (var t in tickets) sum += t.calculatePrice();
-            foreach (var s in snack) sum += s.calculatePrice();
-            totalPrice = sum;
-            return totalPrice;
+            get
+            {
+                double sum = 0;
+                foreach (var t in tickets) sum += t.calculatePrice();
+                foreach (var s in snacks) sum += s.calculatePrice();
+                return sum;
+            }
+        }
+
+        public Booking(string bookingID, Customer customer, ShowTime showTime, List<Ticket> tickets, List<Snack> snacks)
+        {
+            this.bookingID = bookingID;
+            this.customer = customer;
+            this.showTime = showTime;
+            this.tickets = tickets;
+            this.snacks = snacks;
         }
 
         public void confirmBooking()

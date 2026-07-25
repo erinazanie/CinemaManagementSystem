@@ -11,6 +11,21 @@ namespace CinemaManagementLibrary
         public int numberOfSeat { get; set; }
         public List<Seat> seats { get; set; } = new List<Seat>();
 
+        public Hall(string hallID, string name, int numberOfSeat)
+        {
+            this.hallID = hallID;
+            this.name = name;
+            this.numberOfSeat = numberOfSeat;
+        }
+
+        public Hall(string hallID, string name, int numberOfSeat, List<Seat> seats)
+        {
+            this.hallID = hallID;
+            this.name = name;
+            this.numberOfSeat = numberOfSeat;
+            this.seats = seats;
+        }
+
         public void addSeat(Seat seat)
         {
             seats.Add(seat);

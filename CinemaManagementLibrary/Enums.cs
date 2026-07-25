@@ -1,10 +1,5 @@
 ﻿namespace CinemaManagementLibrary
 {
-    public enum SnackType
-    {
-        food,
-        beverage
-    }
 
     public enum TicketType
     {
