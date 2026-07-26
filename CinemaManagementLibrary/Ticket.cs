@@ -1,23 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CinemaManagementLibrary
+﻿namespace CinemaManagementLibrary
 {
-    public class Ticket : Item
+    public class Ticket
     {
-        public TicketType ticketType { get; set; }
+        public string ticketID { get; set; }
         public Seat seat { get; set; }
+        public TicketType ticketType { get; set; }
 
-        public Ticket(string itemId, double itemPrice, TicketType ticketType, Seat seat) : base(itemId, itemPrice)
+        public Ticket(string ticketID, Seat seat, TicketType ticketType = TicketType.adult)
         {
-            this.ticketType = ticketType;
+            this.ticketID = ticketID;
             this.seat = seat;
+            this.ticketType = ticketType;
         }
 
-        public override double calculatePrice()
+        public double calculatePrice()
         {
-            return itemPrice;
+            switch (ticketType)
+            {
+                case TicketType.child:
+                    return 10.00;
+                case TicketType.student:
+                    return 12.00;
+                case TicketType.adult:
+                default:
+                    return 15.00;
+            }
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using CinemaManagementLibrary;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -14,6 +16,32 @@ namespace CinemaManagementDemo
         {
             InitializeComponent();
             LoadSnackItems();
+            UpdateOrderSummary();
+        }
+
+        // Overload constructor to accept movie, showtime and tickets passed from MovieDetailsForm
+        public SnackSelectionForm(Movie movie, string showtime, List<Ticket> tickets) : this()
+        {
+            // Calculate ticket subtotal from passed tickets
+            if (tickets != null && tickets.Count > 0)
+            {
+                double dblSum = tickets.Sum(t => t.calculatePrice());
+                ticketTotal = (decimal)dblSum;
+
+                // Display selected seat numbers
+                var seatList = string.Join(", ", tickets.Select(t => t.seat?.seatNumber ?? string.Empty));
+                label3.Text = $"Seats: {seatList}";
+            }
+
+            // Display chosen showtime
+            if (!string.IsNullOrEmpty(showtime))
+                label5.Text = $"Time: {showtime}";
+
+            // Optionally display movie title in the booking panel
+            if (movie != null)
+                lblBookingDetails.Text = movie.title;
+
+            // Refresh order summary now that ticket total has been set
             UpdateOrderSummary();
         }
 

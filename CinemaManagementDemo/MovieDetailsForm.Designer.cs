@@ -2,15 +2,8 @@
 {
     partial class MovieDetailsForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             panel1 = new Panel();
@@ -40,6 +29,7 @@
             lblGenre = new Label();
             lblMovieTitle = new Label();
             panel3 = new Panel();
+            pnlTicketTypes = new FlowLayoutPanel();
             btnNextSnacks = new Button();
             lblSelectedSeats = new Label();
             pnlSeats = new FlowLayoutPanel();
@@ -181,6 +171,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(45, 40, 62);
+            panel3.Controls.Add(pnlTicketTypes);
             panel3.Controls.Add(btnNextSnacks);
             panel3.Controls.Add(lblSelectedSeats);
             panel3.Controls.Add(pnlSeats);
@@ -195,13 +186,23 @@
             panel3.Size = new Size(560, 560);
             panel3.TabIndex = 2;
             // 
+            // pnlTicketTypes
+            // 
+            pnlTicketTypes.AutoScroll = true;
+            pnlTicketTypes.BackColor = Color.FromArgb(30, 27, 46);
+            pnlTicketTypes.Location = new Point(15, 410);
+            pnlTicketTypes.Name = "pnlTicketTypes";
+            pnlTicketTypes.Padding = new Padding(5);
+            pnlTicketTypes.Size = new Size(330, 133);
+            pnlTicketTypes.TabIndex = 9;
+            // 
             // btnNextSnacks
             // 
             btnNextSnacks.BackColor = Color.FromArgb(162, 89, 255);
             btnNextSnacks.FlatStyle = FlatStyle.Flat;
             btnNextSnacks.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNextSnacks.ForeColor = Color.White;
-            btnNextSnacks.Location = new Point(360, 503);
+            btnNextSnacks.Location = new Point(360, 500);
             btnNextSnacks.Name = "btnNextSnacks";
             btnNextSnacks.Size = new Size(185, 40);
             btnNextSnacks.TabIndex = 8;
@@ -213,7 +214,7 @@
             // 
             lblSelectedSeats.AutoSize = true;
             lblSelectedSeats.ForeColor = Color.FromArgb(162, 89, 255);
-            lblSelectedSeats.Location = new Point(15, 415);
+            lblSelectedSeats.Location = new Point(15, 385);
             lblSelectedSeats.Name = "lblSelectedSeats";
             lblSelectedSeats.Size = new Size(215, 20);
             lblSelectedSeats.TabIndex = 7;
@@ -222,7 +223,7 @@
             // pnlSeats
             // 
             pnlSeats.BackColor = Color.FromArgb(30, 27, 46);
-            pnlSeats.Location = new Point(65, 150);
+            pnlSeats.Location = new Point(65, 145);
             pnlSeats.Name = "pnlSeats";
             pnlSeats.Padding = new Padding(10);
             pnlSeats.Size = new Size(430, 230);
@@ -232,7 +233,7 @@
             // 
             label3.BackColor = Color.FromArgb(60, 54, 80);
             label3.ForeColor = Color.Gray;
-            label3.Location = new Point(15, 110);
+            label3.Location = new Point(15, 105);
             label3.Name = "label3";
             label3.Size = new Size(530, 20);
             label3.TabIndex = 5;
@@ -308,6 +309,7 @@
             Name = "MovieDetailsForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Movie Details & Seat Selection";
+            Load += MovieDetailsForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -341,5 +343,6 @@
         private Label ageLimit;
         private Label lblProducer;
         private Label lblReleaseDate;
+        private FlowLayoutPanel pnlTicketTypes;
     }
 }
