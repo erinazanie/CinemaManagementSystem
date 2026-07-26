@@ -8,8 +8,8 @@ namespace CinemaManagementLibrary
     {
         public DateTime expectedRelease { get; set; }
 
-        public ComingSoonMovie(string movieID, string title, Genre genre, int duration, int ageLimit, int releaseYear, string producer, DateTime expectedRelease)
-            : base(movieID, title, genre, duration, ageLimit, releaseYear, producer)
+        public ComingSoonMovie(string movieID, string title, Genre genre, int duration, int ageLimit, int releaseYear, string producer, string description, DateTime expectedRelease)
+            : base(movieID, title, genre, duration, ageLimit, releaseYear, producer, description)
         {
             this.expectedRelease = expectedRelease;
         }

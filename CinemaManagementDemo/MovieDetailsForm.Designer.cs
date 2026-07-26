@@ -32,11 +32,11 @@
             label1 = new Label();
             button1 = new Button();
             panel2 = new Panel();
-            producer = new Label();
-            releaseYear = new Label();
+            lblProducer = new Label();
+            lblReleaseDate = new Label();
             ageLimit = new Label();
             picPoster = new PictureBox();
-            lblDescription = new Label();
+            lblMovieDetails = new Label();
             lblGenre = new Label();
             lblMovieTitle = new Label();
             panel3 = new Panel();
@@ -93,11 +93,11 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(45, 40, 62);
-            panel2.Controls.Add(producer);
-            panel2.Controls.Add(releaseYear);
+            panel2.Controls.Add(lblProducer);
+            panel2.Controls.Add(lblReleaseDate);
             panel2.Controls.Add(ageLimit);
             panel2.Controls.Add(picPoster);
-            panel2.Controls.Add(lblDescription);
+            panel2.Controls.Add(lblMovieDetails);
             panel2.Controls.Add(lblGenre);
             panel2.Controls.Add(lblMovieTitle);
             panel2.Location = new Point(20, 70);
@@ -105,27 +105,27 @@
             panel2.Size = new Size(260, 560);
             panel2.TabIndex = 1;
             // 
-            // producer
+            // lblProducer
             // 
-            producer.AutoSize = true;
-            producer.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            producer.ForeColor = Color.Gray;
-            producer.Location = new Point(15, 368);
-            producer.Name = "producer";
-            producer.Size = new Size(170, 17);
-            producer.TabIndex = 6;
-            producer.Text = "Producer: Animonsta Studio";
+            lblProducer.AutoSize = true;
+            lblProducer.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProducer.ForeColor = Color.Gray;
+            lblProducer.Location = new Point(15, 368);
+            lblProducer.Name = "lblProducer";
+            lblProducer.Size = new Size(170, 17);
+            lblProducer.TabIndex = 6;
+            lblProducer.Text = "Producer: Animonsta Studio";
             // 
-            // releaseYear
+            // lblReleaseDate
             // 
-            releaseYear.AutoSize = true;
-            releaseYear.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            releaseYear.ForeColor = Color.Gray;
-            releaseYear.Location = new Point(15, 348);
-            releaseYear.Name = "releaseYear";
-            releaseYear.Size = new Size(117, 17);
-            releaseYear.TabIndex = 5;
-            releaseYear.Text = "Release Year: 2024";
+            lblReleaseDate.AutoSize = true;
+            lblReleaseDate.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblReleaseDate.ForeColor = Color.Gray;
+            lblReleaseDate.Location = new Point(15, 348);
+            lblReleaseDate.Name = "lblReleaseDate";
+            lblReleaseDate.Size = new Size(117, 17);
+            lblReleaseDate.TabIndex = 5;
+            lblReleaseDate.Text = "Release Year: 2024";
             // 
             // ageLimit
             // 
@@ -147,14 +147,14 @@
             picPoster.TabIndex = 3;
             picPoster.TabStop = false;
             // 
-            // lblDescription
+            // lblMovieDetails
             // 
-            lblDescription.ForeColor = Color.LightGray;
-            lblDescription.Location = new Point(15, 392);
-            lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(230, 100);
-            lblDescription.TabIndex = 2;
-            lblDescription.Text = "Follow Papa Zola on an epic comedy-packed adventure as he saves the galaxy!";
+            lblMovieDetails.ForeColor = Color.LightGray;
+            lblMovieDetails.Location = new Point(15, 392);
+            lblMovieDetails.Name = "lblMovieDetails";
+            lblMovieDetails.Size = new Size(230, 100);
+            lblMovieDetails.TabIndex = 2;
+            lblMovieDetails.Text = "Follow Papa Zola on an epic comedy-packed adventure as he saves the galaxy!";
             // 
             // lblGenre
             // 
@@ -325,7 +325,7 @@
         private Button button1;
         private Panel panel2;
         private Label lblMovieTitle;
-        private Label lblDescription;
+        private Label lblMovieDetails;
         private Label lblGenre;
         private PictureBox picPoster;
         private Panel panel3;
@@ -339,7 +339,7 @@
         private Label lblSelectedSeats;
         private FlowLayoutPanel pnlSeats;
         private Label ageLimit;
-        private Label producer;
-        private Label releaseYear;
+        private Label lblProducer;
+        private Label lblReleaseDate;
     }
 }

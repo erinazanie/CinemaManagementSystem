@@ -13,8 +13,9 @@ namespace CinemaManagementLibrary
         public int ageLimit { get; set; }
         public int releaseYear { get; set; }
         public string producer { get; set; }
+        public string description { get; set; }
 
-        public Movie(string movieID, string title, Genre genre, int duration, int ageLimit, int releaseYear, string producer)
+        public Movie(string movieID, string title, Genre genre, int duration, int ageLimit, int releaseYear, string producer, string description)
         {
             this.movieID = movieID;
             this.title = title;
@@ -23,6 +24,7 @@ namespace CinemaManagementLibrary
             this.ageLimit = ageLimit;
             this.releaseYear = releaseYear;
             this.producer = producer;
+            this.description = description;
         }
 
         public virtual string getMovieInfo()

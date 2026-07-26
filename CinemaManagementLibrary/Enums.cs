@@ -10,10 +10,10 @@
 
     public enum Genre
     {
-        action,
-        horror,
-        comedy,
-        animation,
-        sci_fi
+        Action,
+        Horror,
+        Comedy,
+        Animation,
+        Sci_Fi  
     }
 }

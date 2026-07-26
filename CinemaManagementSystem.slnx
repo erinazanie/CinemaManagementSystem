@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="CinemaManagementDemo/bin/Debug/net10.0-windows/coming_soon.json" />
+    <File Path="CinemaManagementDemo/bin/Debug/net10.0-windows/now_showing.json" />
+  </Folder>
   <Project Path="CinemaManagementDemo/CinemaManagementDemo.csproj" />
   <Project Path="CinemaManagementLibrary/CinemaManagementLibrary.csproj" />
 </Solution>
