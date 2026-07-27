@@ -5,15 +5,8 @@ namespace CinemaManagementDemo
 {
 	partial class SnackSelectionForm
 	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && (components != null))
@@ -25,53 +18,46 @@ namespace CinemaManagementDemo
 
 		#region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
 		private void InitializeComponent()
 		{
-			panel1 = new Panel();
+			panelHeader = new Panel();
 			btnBack = new Button();
-			label1 = new Label();
-			panel2 = new Panel();
-			label5 = new Label();
-			label4 = new Label();
-			label3 = new Label();
-			btnCheckout = new Button();
+			lblTitleHeader = new Label();
+			flpSnackList = new FlowLayoutPanel();
+			pnlSummary = new Panel();
 			lblGrandTotal = new Label();
-			lstOrderItems = new ListBox();
-			panel4 = new Panel();
-			lblBookingDetails = new Label();
-			label2 = new Label();
-			panel3 = new Panel();
-			pnlSnackGrid = new FlowLayoutPanel();
-			panel5 = new Panel();
-			email = new TextBox();
-			name = new TextBox();
-			label8 = new Label();
-			label7 = new Label();
-			label6 = new Label();
-			panel1.SuspendLayout();
-			panel2.SuspendLayout();
-			panel3.SuspendLayout();
-			panel5.SuspendLayout();
+			btnCheckout = new Button();
+			lstSummary = new ListBox();
+			lblSeatsVal = new Label();
+			lblTimeVal = new Label();
+			lblMovieVal = new Label();
+			lblOrderSummaryHeader = new Label();
+			pnlCustomer = new Panel();
+			txtEmail = new TextBox();
+			txtName = new TextBox();
+			lblEmail = new Label();
+			lblName = new Label();
+			lblCustomerHeader = new Label();
+			panelHeader.SuspendLayout();
+			pnlSummary.SuspendLayout();
+			pnlCustomer.SuspendLayout();
 			SuspendLayout();
 			// 
-			// panel1
+			// panelHeader
 			// 
-			panel1.BackColor = Color.FromArgb(45, 40, 62);
-			panel1.Controls.Add(btnBack);
-			panel1.Controls.Add(label1);
-			panel1.Dock = DockStyle.Top;
-			panel1.Location = new Point(0, 0);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(882, 50);
-			panel1.TabIndex = 0;
+			panelHeader.BackColor = Color.FromArgb(45, 40, 62);
+			panelHeader.Controls.Add(btnBack);
+			panelHeader.Controls.Add(lblTitleHeader);
+			panelHeader.Dock = DockStyle.Top;
+			panelHeader.Location = new Point(0, 0);
+			panelHeader.Name = "panelHeader";
+			panelHeader.Size = new Size(882, 50);
+			panelHeader.TabIndex = 0;
 			// 
 			// btnBack
 			// 
 			btnBack.BackColor = Color.FromArgb(60, 54, 80);
+			btnBack.FlatStyle = FlatStyle.Flat;
 			btnBack.ForeColor = Color.White;
 			btnBack.Location = new Point(12, 9);
 			btnBack.Name = "btnBack";
@@ -81,255 +67,238 @@ namespace CinemaManagementDemo
 			btnBack.UseVisualStyleBackColor = false;
 			btnBack.Click += btnBack_Click;
 			// 
-			// label1
+			// lblTitleHeader
 			// 
-			label1.AutoSize = true;
-			label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.ForeColor = Color.FromArgb(162, 89, 255);
-			label1.Location = new Point(325, 13);
-			label1.Name = "label1";
-			label1.Size = new Size(227, 25);
-			label1.TabIndex = 0;
-			label1.Text = "🎬 STARLIGHT CINEMAS";
+			lblTitleHeader.AutoSize = true;
+			lblTitleHeader.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblTitleHeader.ForeColor = Color.FromArgb(162, 89, 255);
+			lblTitleHeader.Location = new Point(300, 13);
+			lblTitleHeader.Name = "lblTitleHeader";
+			lblTitleHeader.Size = new Size(300, 25);
+			lblTitleHeader.TabIndex = 0;
+			lblTitleHeader.Text = "🍿 SNACK & BEVERAGE SELECTION";
 			// 
-			// panel2
+			// flpSnackList
 			// 
-			panel2.BackColor = Color.FromArgb(45, 40, 62);
-			panel2.Controls.Add(label5);
-			panel2.Controls.Add(label4);
-			panel2.Controls.Add(label3);
-			panel2.Controls.Add(btnCheckout);
-			panel2.Controls.Add(lblGrandTotal);
-			panel2.Controls.Add(lstOrderItems);
-			panel2.Controls.Add(panel4);
-			panel2.Controls.Add(lblBookingDetails);
-			panel2.Controls.Add(label2);
-			panel2.Location = new Point(556, 70);
-			panel2.Name = "panel2";
-			panel2.Size = new Size(304, 562);
-			panel2.TabIndex = 1;
-			panel2.Paint += panel2_Paint;
+			flpSnackList.AutoScroll = true;
+			flpSnackList.BackColor = Color.FromArgb(24, 21, 36);
+			flpSnackList.BorderStyle = BorderStyle.FixedSingle;
+			flpSnackList.FlowDirection = FlowDirection.TopDown;
+			flpSnackList.Location = new Point(30, 70);
+			flpSnackList.Name = "flpSnackList";
+			flpSnackList.Padding = new Padding(10);
+			flpSnackList.Size = new Size(465, 330);
+			flpSnackList.TabIndex = 1;
+			flpSnackList.WrapContents = false;
 			// 
-			// label5
+			// pnlSummary
 			// 
-			label5.ForeColor = Color.LightGray;
-			label5.Location = new Point(15, 105);
-			label5.Name = "label5";
-			label5.Size = new Size(240, 20);
-			label5.TabIndex = 8;
-			label5.Text = "Time: 12:30 PM";
+			pnlSummary.BackColor = Color.FromArgb(38, 33, 54);
+			pnlSummary.BorderStyle = BorderStyle.FixedSingle;
+			pnlSummary.Controls.Add(lblGrandTotal);
+			pnlSummary.Controls.Add(btnCheckout);
+			pnlSummary.Controls.Add(lstSummary);
+			pnlSummary.Controls.Add(lblSeatsVal);
+			pnlSummary.Controls.Add(lblTimeVal);
+			pnlSummary.Controls.Add(lblMovieVal);
+			pnlSummary.Controls.Add(lblOrderSummaryHeader);
+			pnlSummary.Location = new Point(515, 70);
+			pnlSummary.Name = "pnlSummary";
+			pnlSummary.Size = new Size(335, 455);
+			pnlSummary.TabIndex = 2;
 			// 
-			// label4
+			// lblGrandTotal
 			// 
-			label4.ForeColor = Color.LightGray;
-			label4.Location = new Point(15, 85);
-			label4.Name = "label4";
-			label4.Size = new Size(240, 20);
-			label4.TabIndex = 7;
-			label4.Text = "Hall: H";
-			// 
-			// label3
-			// 
-			label3.ForeColor = Color.LightGray;
-			label3.Location = new Point(15, 65);
-			label3.Name = "label3";
-			label3.Size = new Size(240, 20);
-			label3.TabIndex = 6;
-			label3.Text = "Seats: A1, A2\r\n";
+			lblGrandTotal.Font = new Font("Segoe UI", 13.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblGrandTotal.ForeColor = Color.FromArgb(162, 89, 255);
+			lblGrandTotal.Location = new Point(15, 345);
+			lblGrandTotal.Name = "lblGrandTotal";
+			lblGrandTotal.Size = new Size(305, 35);
+			lblGrandTotal.TabIndex = 6;
+			lblGrandTotal.Text = "Total: RM 0.00";
+			lblGrandTotal.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// btnCheckout
 			// 
 			btnCheckout.BackColor = Color.FromArgb(162, 89, 255);
+			btnCheckout.FlatAppearance.BorderSize = 0;
 			btnCheckout.FlatStyle = FlatStyle.Flat;
-			btnCheckout.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			btnCheckout.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			btnCheckout.ForeColor = Color.White;
-			btnCheckout.Location = new Point(33, 493);
+			btnCheckout.Location = new Point(15, 390);
 			btnCheckout.Name = "btnCheckout";
-			btnCheckout.Size = new Size(240, 45);
+			btnCheckout.Size = new Size(305, 48);
 			btnCheckout.TabIndex = 5;
 			btnCheckout.Text = "Checkout ➔";
 			btnCheckout.UseVisualStyleBackColor = false;
-			btnCheckout.Click += btnCheckout_Click_1;
+			btnCheckout.Click += btnCheckout_Click;
 			// 
-			// lblGrandTotal
+			// lstSummary
 			// 
-			lblGrandTotal.AutoSize = true;
-			lblGrandTotal.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lblGrandTotal.ForeColor = Color.FromArgb(162, 89, 255);
-			lblGrandTotal.Location = new Point(69, 452);
-			lblGrandTotal.Name = "lblGrandTotal";
-			lblGrandTotal.Size = new Size(161, 28);
-			lblGrandTotal.TabIndex = 4;
-			lblGrandTotal.Text = "Total: RM 36.00";
+			lstSummary.BackColor = Color.FromArgb(28, 24, 42);
+			lstSummary.BorderStyle = BorderStyle.FixedSingle;
+			lstSummary.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			lstSummary.ForeColor = Color.LightGray;
+			lstSummary.FormattingEnabled = true;
+			lstSummary.HorizontalScrollbar = true;
+			lstSummary.ItemHeight = 20;
+			lstSummary.Location = new Point(15, 125);
+			lstSummary.Name = "lstSummary";
+			lstSummary.Size = new Size(305, 202);
+			lstSummary.TabIndex = 4;
 			// 
-			// lstOrderItems
+			// lblSeatsVal
 			// 
-			lstOrderItems.BackColor = Color.FromArgb(30, 27, 46);
-			lstOrderItems.BorderStyle = BorderStyle.FixedSingle;
-			lstOrderItems.ForeColor = Color.White;
-			lstOrderItems.FormattingEnabled = true;
-			lstOrderItems.Location = new Point(15, 169);
-			lstOrderItems.Name = "lstOrderItems";
-			lstOrderItems.Size = new Size(273, 242);
-			lstOrderItems.TabIndex = 3;
+			lblSeatsVal.AutoSize = true;
+			lblSeatsVal.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			lblSeatsVal.ForeColor = Color.LightGray;
+			lblSeatsVal.Location = new Point(15, 95);
+			lblSeatsVal.Name = "lblSeatsVal";
+			lblSeatsVal.Size = new Size(72, 20);
+			lblSeatsVal.TabIndex = 3;
+			lblSeatsVal.Text = "Seats: C2";
 			// 
-			// panel4
+			// lblTimeVal
 			// 
-			panel4.BackColor = Color.FromArgb(60, 54, 80);
-			panel4.Location = new Point(15, 150);
-			panel4.Name = "panel4";
-			panel4.Size = new Size(240, 3);
-			panel4.TabIndex = 2;
+			lblTimeVal.AutoSize = true;
+			lblTimeVal.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			lblTimeVal.ForeColor = Color.LightGray;
+			lblTimeVal.Location = new Point(15, 72);
+			lblTimeVal.Name = "lblTimeVal";
+			lblTimeVal.Size = new Size(111, 20);
+			lblTimeVal.TabIndex = 2;
+			lblTimeVal.Text = "Time: 12:30 PM";
 			// 
-			// lblBookingDetails
+			// lblMovieVal
 			// 
-			lblBookingDetails.ForeColor = Color.LightGray;
-			lblBookingDetails.Location = new Point(15, 45);
-			lblBookingDetails.Name = "lblBookingDetails";
-			lblBookingDetails.Size = new Size(240, 20);
-			lblBookingDetails.TabIndex = 1;
-			lblBookingDetails.Text = "Movie: Papa Zola\r\n";
+			lblMovieVal.AutoSize = true;
+			lblMovieVal.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblMovieVal.ForeColor = Color.White;
+			lblMovieVal.Location = new Point(15, 45);
+			lblMovieVal.Name = "lblMovieVal";
+			lblMovieVal.Size = new Size(177, 23);
+			lblMovieVal.TabIndex = 1;
+			lblMovieVal.Text = "Papa Zola The Movie";
 			// 
-			// label2
+			// lblOrderSummaryHeader
 			// 
-			label2.AutoSize = true;
-			label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label2.ForeColor = Color.White;
-			label2.Location = new Point(15, 15);
-			label2.Name = "label2";
-			label2.Size = new Size(162, 28);
-			label2.TabIndex = 0;
-			label2.Text = "Order Summary";
+			lblOrderSummaryHeader.AutoSize = true;
+			lblOrderSummaryHeader.Font = new Font("Segoe UI", 11.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblOrderSummaryHeader.ForeColor = Color.White;
+			lblOrderSummaryHeader.Location = new Point(15, 12);
+			lblOrderSummaryHeader.Name = "lblOrderSummaryHeader";
+			lblOrderSummaryHeader.Size = new Size(160, 28);
+			lblOrderSummaryHeader.TabIndex = 0;
+			lblOrderSummaryHeader.Text = "Order Summary";
 			// 
-			// panel3
+			// pnlCustomer
 			// 
-			panel3.BackColor = Color.FromArgb(45, 40, 62);
-			panel3.Controls.Add(pnlSnackGrid);
-			panel3.Location = new Point(20, 70);
-			panel3.Name = "panel3";
-			panel3.Size = new Size(513, 373);
-			panel3.TabIndex = 2;
+			pnlCustomer.BackColor = Color.FromArgb(38, 33, 54);
+			pnlCustomer.BorderStyle = BorderStyle.FixedSingle;
+			pnlCustomer.Controls.Add(txtEmail);
+			pnlCustomer.Controls.Add(txtName);
+			pnlCustomer.Controls.Add(lblEmail);
+			pnlCustomer.Controls.Add(lblName);
+			pnlCustomer.Controls.Add(lblCustomerHeader);
+			pnlCustomer.Location = new Point(30, 415);
+			pnlCustomer.Name = "pnlCustomer";
+			pnlCustomer.Size = new Size(465, 110);
+			pnlCustomer.TabIndex = 3;
 			// 
-			// pnlSnackGrid
+			// txtEmail
 			// 
-			pnlSnackGrid.AutoScroll = true;
-			pnlSnackGrid.BackColor = Color.FromArgb(30, 27, 46);
-			pnlSnackGrid.Location = new Point(15, 15);
-			pnlSnackGrid.Name = "pnlSnackGrid";
-			pnlSnackGrid.Size = new Size(482, 340);
-			pnlSnackGrid.TabIndex = 0;
+			txtEmail.BackColor = Color.FromArgb(28, 24, 42);
+			txtEmail.BorderStyle = BorderStyle.FixedSingle;
+			txtEmail.ForeColor = Color.White;
+			txtEmail.Location = new Point(80, 70);
+			txtEmail.Name = "txtEmail";
+			txtEmail.Size = new Size(365, 27);
+			txtEmail.TabIndex = 4;
 			// 
-			// panel5
+			// txtName
 			// 
-			panel5.BackColor = Color.FromArgb(45, 40, 62);
-			panel5.Controls.Add(email);
-			panel5.Controls.Add(name);
-			panel5.Controls.Add(label8);
-			panel5.Controls.Add(label7);
-			panel5.Controls.Add(label6);
-			panel5.Location = new Point(20, 479);
-			panel5.Name = "panel5";
-			panel5.Size = new Size(513, 136);
-			panel5.TabIndex = 3;
+			txtName.BackColor = Color.FromArgb(28, 24, 42);
+			txtName.BorderStyle = BorderStyle.FixedSingle;
+			txtName.ForeColor = Color.White;
+			txtName.Location = new Point(80, 37);
+			txtName.Name = "txtName";
+			txtName.Size = new Size(365, 27);
+			txtName.TabIndex = 3;
 			// 
-			// email
+			// lblEmail
 			// 
-			email.BackColor = Color.FromArgb(60, 54, 80);
-			email.BorderStyle = BorderStyle.FixedSingle;
-			email.ForeColor = Color.White;
-			email.Location = new Point(80, 96);
-			email.Name = "email";
-			email.Size = new Size(397, 27);
-			email.TabIndex = 4;
+			lblEmail.AutoSize = true;
+			lblEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblEmail.ForeColor = Color.LightGray;
+			lblEmail.Location = new Point(15, 73);
+			lblEmail.Name = "lblEmail";
+			lblEmail.Size = new Size(51, 20);
+			lblEmail.TabIndex = 2;
+			lblEmail.Text = "Email:";
 			// 
-			// name
+			// lblName
 			// 
-			name.BackColor = Color.FromArgb(60, 54, 80);
-			name.BorderStyle = BorderStyle.FixedSingle;
-			name.ForeColor = Color.White;
-			name.Location = new Point(80, 51);
-			name.Name = "name";
-			name.Size = new Size(397, 27);
-			name.TabIndex = 3;
+			lblName.AutoSize = true;
+			lblName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblName.ForeColor = Color.LightGray;
+			lblName.Location = new Point(15, 40);
+			lblName.Name = "lblName";
+			lblName.Size = new Size(55, 20);
+			lblName.TabIndex = 1;
+			lblName.Text = "Name:";
 			// 
-			// label8
+			// lblCustomerHeader
 			// 
-			label8.AutoSize = true;
-			label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label8.ForeColor = Color.White;
-			label8.Location = new Point(15, 9);
-			label8.Name = "label8";
-			label8.Size = new Size(174, 28);
-			label8.TabIndex = 2;
-			label8.Text = "Customer Details";
-			// 
-			// label7
-			// 
-			label7.AutoSize = true;
-			label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label7.ForeColor = Color.White;
-			label7.Location = new Point(15, 98);
-			label7.Name = "label7";
-			label7.Size = new Size(51, 20);
-			label7.TabIndex = 1;
-			label7.Text = "Email:";
-			// 
-			// label6
-			// 
-			label6.AutoSize = true;
-			label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label6.ForeColor = Color.White;
-			label6.Location = new Point(15, 51);
-			label6.Name = "label6";
-			label6.Size = new Size(59, 20);
-			label6.TabIndex = 0;
-			label6.Text = "Name: ";
+			lblCustomerHeader.AutoSize = true;
+			lblCustomerHeader.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblCustomerHeader.ForeColor = Color.White;
+			lblCustomerHeader.Location = new Point(12, 10);
+			lblCustomerHeader.Name = "lblCustomerHeader";
+			lblCustomerHeader.Size = new Size(144, 23);
+			lblCustomerHeader.TabIndex = 0;
+			lblCustomerHeader.Text = "Customer Details";
 			// 
 			// SnackSelectionForm
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(30, 27, 46);
-			ClientSize = new Size(882, 653);
-			Controls.Add(panel5);
-			Controls.Add(panel3);
-			Controls.Add(panel2);
-			Controls.Add(panel1);
+			ClientSize = new Size(882, 553);
+			Controls.Add(pnlCustomer);
+			Controls.Add(pnlSummary);
+			Controls.Add(flpSnackList);
+			Controls.Add(panelHeader);
 			Name = "SnackSelectionForm";
 			StartPosition = FormStartPosition.CenterParent;
 			Text = "Snack & Beverage Selection";
-			panel1.ResumeLayout(false);
-			panel1.PerformLayout();
-			panel2.ResumeLayout(false);
-			panel2.PerformLayout();
-			panel3.ResumeLayout(false);
-			panel5.ResumeLayout(false);
-			panel5.PerformLayout();
+			panelHeader.ResumeLayout(false);
+			panelHeader.PerformLayout();
+			pnlSummary.ResumeLayout(false);
+			pnlSummary.PerformLayout();
+			pnlCustomer.ResumeLayout(false);
+			pnlCustomer.PerformLayout();
 			ResumeLayout(false);
 		}
 
 		#endregion
 
-		private Panel panel1;
+		private Panel panelHeader;
 		private Button btnBack;
-		private Label label1;
-		private Panel panel2;
-		private Label lblBookingDetails;
-		private Label label2;
-		private Panel panel3;
-		private FlowLayoutPanel pnlSnackGrid;
-		private ListBox lstOrderItems;
-		private Panel panel4;
+		private Label lblTitleHeader;
+		private FlowLayoutPanel flpSnackList;
+		private Panel pnlSummary;
+		private Label lblOrderSummaryHeader;
+		private Label lblMovieVal;
+		private Label lblTimeVal;
+		private Label lblSeatsVal;
+		private ListBox lstSummary;
 		private Label lblGrandTotal;
 		private Button btnCheckout;
-		private Label label5;
-		private Label label4;
-		private Label label3;
-		private Panel panel5;
-		private TextBox email;
-		private TextBox name;
-		private Label label8;
-		private Label label7;
-		private Label label6;
+		private Panel pnlCustomer;
+		private Label lblCustomerHeader;
+		private Label lblName;
+		private Label lblEmail;
+		private TextBox txtName;
+		private TextBox txtEmail;
 	}
 }

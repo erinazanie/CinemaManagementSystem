@@ -19,21 +19,59 @@ namespace CinemaManagementDemo
 			InitializeComponent();
 		}
 
+		public MovieDetailsForm(Movie movie, Hall hall = null) : this()
+		{
+			this.selectedMovie = movie;
+			this.currentHall = hall;
+		}
+
 		private void InitializeShowtimeHalls()
 		{
-			// Hall 1: Standard (24 seats)
-			Hall hall1 = new Hall("H01", "Hall 1 - Standard", 24);
-			PopulateHallSeats(hall1, 4, 6); // 4 rows, 6 columns
+			showtimeHallMap.Clear();
 
-			// Hall 2: VIP / IMAX (18 seats)
-			Hall hall2 = new Hall("H02", "Hall 2 - IMAX", 18);
-			PopulateHallSeats(hall2, 3, 6); // 3 rows, 6 columns
+			// Generate dynamic halls based on movie ID/Title so each movie gets its own distinct Hall
+			Hall primaryHall;
+			Hall secondaryHall;
 
-			// Map radio button text to specific halls
-			showtimeHallMap["12:30 PM"] = hall1;
-			showtimeHallMap["03:45 PM"] = hall1;
-			showtimeHallMap["07:15 PM"] = hall2;
-			showtimeHallMap["10:00 PM"] = hall2;
+			if (selectedMovie != null)
+			{
+				switch (selectedMovie.movieID)
+				{
+					case "M001":
+						primaryHall = new Hall("H01", "Hall 1 - Family Deluxe", 24);
+						secondaryHall = new Hall("H05", "Hall 5 - Kids Screen", 20);
+						break;
+					case "M002":
+						primaryHall = new Hall("H02", "Hall 2 - Dolby Atmos", 24);
+						secondaryHall = new Hall("H06", "Hall 6 - Standard", 18);
+						break;
+					case "M003":
+						primaryHall = new Hall("H03", "Hall 3 - Standard", 24);
+						secondaryHall = new Hall("H07", "Hall 7 - Club Cinema", 18);
+						break;
+					case "M004":
+						primaryHall = new Hall("H04", "Hall 4 - IMAX 3D", 24);
+						secondaryHall = new Hall("H08", "Hall 8 - VIP Suite", 18);
+						break;
+					default:
+						primaryHall = new Hall("H01", $"Hall 1 - {selectedMovie.title}", 24);
+						secondaryHall = new Hall("H02", $"Hall 2 - {selectedMovie.title}", 18);
+						break;
+				}
+			}
+			else
+			{
+				primaryHall = new Hall("H01", "Hall 1 - Standard", 24);
+				secondaryHall = new Hall("H02", "Hall 2 - IMAX", 18);
+			}
+
+			PopulateHallSeats(primaryHall, 4, 6);
+			PopulateHallSeats(secondaryHall, 3, 6);
+
+			showtimeHallMap["12:30 PM"] = primaryHall;
+			showtimeHallMap["03:45 PM"] = primaryHall;
+			showtimeHallMap["07:15 PM"] = secondaryHall;
+			showtimeHallMap["10:00 PM"] = secondaryHall;
 		}
 
 		private void PopulateHallSeats(Hall hall, int rowsCount, int seatsPerRow)
@@ -48,27 +86,28 @@ namespace CinemaManagementDemo
 			}
 		}
 
-		public MovieDetailsForm(Movie movie, Hall hall = null) : this()
+		private void MovieDetailsForm_Load(object sender, EventArgs e)
 		{
-			this.selectedMovie = movie;
+			DisplayMovieDetails();
+			InitializeShowtimeHalls();
 
-			// If no hall is passed, create a default Hall with seats
-			this.currentHall = hall ?? CreateDefaultHall();
+			rbTime1.CheckedChanged += ShowtimeRadioButton_CheckedChanged;
+			rbTime2.CheckedChanged += ShowtimeRadioButton_CheckedChanged;
+			rbTime3.CheckedChanged += ShowtimeRadioButton_CheckedChanged;
+			rbTime4.CheckedChanged += ShowtimeRadioButton_CheckedChanged;
+
+			SyncCurrentHallWithSelectedShowtime();
+			GenerateSeatingGridFromHall();
+			UpdateSeatSelectionUI();
 		}
 
-		private Hall CreateDefaultHall()
+		private void SyncCurrentHallWithSelectedShowtime()
 		{
-			Hall hall = new Hall("H01", "Hall 1 - Standard", 24);
-			char[] rows = { 'A', 'B', 'C', 'D' };
-
-			foreach (char row in rows)
+			string selectedTime = GetSelectedShowtime();
+			if (showtimeHallMap.TryGetValue(selectedTime, out Hall matchedHall))
 			{
-				for (int i = 1; i <= 6; i++)
-				{
-					hall.addSeat(new Seat($"{row}{i}"));
-				}
+				this.currentHall = matchedHall;
 			}
-			return hall;
 		}
 
 		private void ShowtimeRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -76,47 +115,14 @@ namespace CinemaManagementDemo
 			RadioButton rb = sender as RadioButton;
 			if (rb != null && rb.Checked)
 			{
-				string selectedTime = rb.Text;
+				SyncCurrentHallWithSelectedShowtime();
 
-				if (showtimeHallMap.TryGetValue(selectedTime, out Hall selectedHall))
-				{
-					this.currentHall = selectedHall;
+				selectedSeatMap.Clear();
+				RenderTicketTypeSelectors();
 
-					// Clear current selections when switching showtimes/halls
-					selectedSeatMap.Clear();
-					RenderTicketTypeSelectors();
-
-					// Redraw seating grid for the newly selected hall
-					GenerateSeatingGridFromHall();
-					UpdateSeatSelectionUI();
-				}
+				GenerateSeatingGridFromHall();
+				UpdateSeatSelectionUI();
 			}
-		}
-
-		private void MovieDetailsForm_Load(object sender, EventArgs e)
-		{
-			DisplayMovieDetails();
-			InitializeShowtimeHalls();
-
-			// Hook up event handlers for showtime radio buttons
-			rbTime1.CheckedChanged += ShowtimeRadioButton_CheckedChanged;
-			rbTime2.CheckedChanged += ShowtimeRadioButton_CheckedChanged;
-			rbTime3.CheckedChanged += ShowtimeRadioButton_CheckedChanged;
-			rbTime4.CheckedChanged += ShowtimeRadioButton_CheckedChanged;
-
-			// Load hall for the initial checked radio button
-			string initialTime = GetSelectedShowtime();
-			if (showtimeHallMap.TryGetValue(initialTime, out Hall hall))
-			{
-				currentHall = hall;
-			}
-			else if (currentHall == null)
-			{
-				currentHall = showtimeHallMap["12:30 PM"];
-			}
-
-			GenerateSeatingGridFromHall();
-			UpdateSeatSelectionUI();
 		}
 
 		private void DisplayMovieDetails()
@@ -143,7 +149,8 @@ namespace CinemaManagementDemo
 		{
 			pnlSeats.Controls.Clear();
 
-			// Iterate directly over the seats managed inside the Hall instance
+			if (currentHall == null || currentHall.seats == null) return;
+
 			foreach (Seat seatObj in currentHall.seats)
 			{
 				bool available = seatObj.isAvailable();
@@ -280,7 +287,7 @@ namespace CinemaManagementDemo
 				.Select((kvp, index) => new Ticket($"TKN-{index + 1}", kvp.Key, kvp.Value))
 				.ToList();
 
-			using (var snackPage = new SnackSelectionForm(selectedMovie, chosenTime, tickets))
+			using (var snackPage = new SnackSelectionForm(selectedMovie, chosenTime, currentHall, tickets))
 			{
 				this.Hide();
 				snackPage.ShowDialog();
@@ -290,7 +297,6 @@ namespace CinemaManagementDemo
 
 		private void label1_Click(object sender, EventArgs e)
 		{
-
 		}
 	}
 }
