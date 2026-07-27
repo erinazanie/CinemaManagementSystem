@@ -36,14 +36,14 @@ project/
 
 ## 4. OOP Concepts Used
 - Encapsulation: class properties and methods keep data organized and controlled.
-- Inheritance: ComingSoonMovie extends the Movie class.
+- Inheritance: ComingSoonMovie extends the Movie class. Moreover, Snack and Ticket classes extend the Item class because a Snack is an Item.
 - Abstraction: each class represents a real-world concept in a simple and clear way.
 - Polymorphism: methods such as getMovieInfo() can be reused or overridden in derived classes.
 - Composition: Booking contains objects such as Customer, ShowTime, Ticket, and Snack.
 
 ## 5. UML Class Diagram
 <figure>
-    <img src=""
+    <img src="CinemaManagementSystem UML Diagram.png"
          alt="UML">
     <figcaption>UML diagram showcasing the relations between classes of the library.</figcaption>
 </figure>
@@ -82,7 +82,7 @@ These classes can be instantiated and used to build custom cinema-related applic
 The GitHub repository is available via the link https://github.com/erinazanie/CinemaManagementSystem.git .
 
 ## 10. Future Improvements
-- create an interface for the cinema staff to update the film list and manage halls and showtimes.
+- Create an interface for the cinema staff to update the film list and manage halls and showtimes.
 - Add database persistence instead of JSON files.
 - Implement user authentication and admin management.
 - Improve payment integration.
