@@ -1,3 +1,9 @@
+**Group members**
+- Nabilah binti Mohammad Saleh (26000335)
+- Anis Nur Erina binti Izani (22010078)
+- Jade Léa Marie BROCHARD (26006896)
+
+
 # CinemaManagementSystem
 
 A simple object-oriented cinema management project built with C# and Windows Forms. The solution is composed of a library for the core concepts and a demo application for the user interface.
