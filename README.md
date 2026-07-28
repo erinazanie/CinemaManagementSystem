@@ -46,6 +46,7 @@ project/
 - Abstraction: each class represents a real-world concept in a simple and clear way.
 - Polymorphism: methods such as getMovieInfo() can be reused or overridden in derived classes.
 - Composition: Booking contains objects such as Customer, ShowTime, Ticket, and Snack.
+- Overloading: We implemented two Hall constructors allowing to instantiate halls with or without a list of seats and add them later.
 
 ## 5. UML Class Diagram
 <figure>
