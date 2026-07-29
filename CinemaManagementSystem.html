@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Documentation - Cinema Management System</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --sidebar-bg: #ffffff;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --code-bg: #1e293b;
+            --code-text: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text-main);
+            background: var(--bg);
+            display: flex;
+        }
+
+        /* Side Navigation */
+        nav {
+            width: 280px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        nav h2 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 0.6rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+            background: #eff6ff;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 3rem 4rem;
+            max-width: 900px;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-top: 0;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        p, li {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        ul, ol {
+            padding-left: 1.2rem;
+        }
+
+        /* Code Blocks */
+        pre {
+            background: var(--code-bg);
+            color: var(--code-text);
+            padding: 1.2rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+
+        code {
+            font-family: "Fira Code", Consolas, Monaco, monospace;
+        }
+
+        /* Container styling */
+        .svg-container {
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: #ffffff;
+            margin: 1rem 0;
+            width: 100%;
+            overflow-x: auto;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        /* Click-to-Zoom Lightbox Effect */
+        .svg-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            cursor: zoom-in;
+            transition: transform 0.2s ease;
+        }
+
+        /* Fullscreen enlarged state */
+        .svg-container img.zoomed {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            max-width: 90vw;
+            max-height: 90vh;
+            z-index: 9999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: zoom-out;
+        }
+
+        /* Dark overlay when zoomed */
+        .zoom-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9998;
+        }
+
+        .zoom-overlay.active {
+            display: block;
+        }
+
+        .demo-container {
+            border: 2px dashed var(--border);
+            background: #f1f5f9;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #f1f5f9;
+            color: var(--text-main);
+        }
+
+        /* Cover Table Styling */
+        .cover-table td {
+            padding: 0.4rem 0.75rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Documentation</h2>
+        <ul>
+            <li><a href="#introduction">1. Introduction</a></li>
+            <li><a href="#system-overview">2. System Overview</a></li>
+            <li><a href="#project-structure">3. Project Structure</a></li>
+            <li><a href="#oop-concepts">4. OOP Concepts Used</a></li>
+            <li><a href="#uml-diagram">5. UML Class Diagram</a></li>
+            <li><a href="#demo">6. Demo Application</a></li>
+            <li><a href="#installation">7. Installation & Setup</a></li>
+            <li><a href="#usage">8. How to Use Library</a></li>
+            <li><a href="#repository">9. GitHub Repository</a></li>
+            <li><a href="#future-improvements">10. Future Improvements</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header class="cover">
+            <h1>Cinema Management System</h1>
+            <h3>Developer Documentation</h3>
+            <p>Object-Oriented Programming Final Project</p>
+            <hr>
+            <table class="cover-table">
+                <tr><td><strong>Course</strong></td><td>TFB1033/TEB1043: Object Oriented Programming - May 2026</td></tr>
+                <tr><td><strong>Language</strong></td><td>C# (.NET Windows Forms)</td></tr>
+                <tr>
+                    <td><strong>Prepared By</strong></td>
+                    <td>
+                        <ul style="margin: 0; padding-left: 1.2rem;">
+                            <li>Nabilah binti Mohammad Saleh (26000335)</li>
+                            <li>Anis Nur Erina binti Izani (22010078)</li>
+                            <li>Jade Léa Marie BROCHARD (26006896)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr><td><strong>Submission Date</strong></td><td>31 July 2026</td></tr>
+            </table>
+        </header>
+
+        <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p>
+                The Cinema Management System is an object-oriented software library
+                developed using C# and .NET Windows Forms. The project demonstrates
+                the application of Object-Oriented Programming (OOP) principles by
+                implementing a reusable class library and a demo application.
+            </p>
+            <p>
+                The system allows users to browse movies, select showtimes, reserve
+                seats, purchase snacks, and generate booking receipts. The project
+                focuses on clean software design through encapsulation, inheritance,
+                abstraction, interfaces, and polymorphism.
+            </p>
+        </section>
+
+        <section id="system-overview">
+            <h2>2. System Overview</h2>
+            <p>The Cinema Management System consists of two main components:</p>
+            <ul>
+                <li><strong>CinemaManagementLibrary</strong> – Contains all business logic and reusable classes.</li>
+                <li><strong>CinemaManagementDemo</strong> – A Windows Forms application demonstrating how the library is used.</li>
+            </ul>
+            <p>The system allows customers to:</p>
+            <ul>
+                <li>Browse available movies</li>
+                <li>Select showtimes</li>
+                <li>Choose seats</li>
+                <li>Purchase snacks</li>
+                <li>Generate digital tickets</li>
+            </ul>
+            <p>
+                The demo application interacts with the library to perform booking operations while maintaining a clear separation between the user interface and business logic.
+            </p>
+        </section>
+
+        <section id="project-structure">
+            <h2>3. Project Structure</h2>
+            <p>Directory hierarchy and key files:</p>
+<pre><code>CinemaManagementSystem
+│
+├── CinemaManagementLibrary
+│   ├── Models
+│   ├── Interfaces
+│   ├── Services
+│   ├── Enums
+│   └── CinemaManagementLibrary.csproj
+│
+├── CinemaManagementDemo
+│   ├── Forms
+│   ├── Assets
+│   ├── Data
+│   ├── Program.cs
+│   └── CinemaManagementDemo.csproj
+│
+├── README.md
+└── CinemaManagementSystem.sln</code></pre>
+            <p>
+                The solution separates the reusable class library from the demonstration application.
+                This architecture allows other applications to reuse the library without modifying the UI.
+            </p>
+        </section>
+
+        <section id="oop-concepts">
+            <h2>4. OOP Concepts Used</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Implementation Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Encapsulation</strong></td>
+                        <td>Class properties and methods keep data organized and controlled</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Inheritance</strong></td>
+                        <td>ComingSoonMovie extends the Movie class. Moreover, Snack and Ticket classes extend the Item class because a Snack is an Item.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Polymorphism</strong></td>
+                        <td>Different ticket types calculate prices using overridden methods that implement different pricing strategies.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Abstraction</strong></td>
+                        <td>Each class represents a real-world concept in a simple and clear way.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Composition</strong></td>
+                        <td>Booking contains objects such as Customer, ShowTime, Ticket, and Snack.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Overloading</strong></td>
+                        <td>We implemented two Hall constructors allowing to instantiate halls with or without a list of seats and add them later.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="uml-diagram">
+            <h2>5. UML Class Diagram</h2>
+            <p>
+                The UML Class Diagram illustrates the relationships between the major classes in the system.
+                It includes inheritance, composition, associations, and implemented interfaces.
+                <em>(Click image to expand)</em>
+            </p>
+
+            <div class="zoom-overlay" id="overlay" onclick="closeZoom()"></div>
+
+            <div class="svg-container">
+                <img id="umlImg" src="Assets/UMLdiagram.svg" alt="UML Class Diagram" onclick="toggleZoom()">
+            </div>
+        </section>
+
+        <section id="demo">
+            <h2>6. Demo Application</h2>
+            <p>
+                The Windows Forms application demonstrates the usage of the Cinema Management Library through an interactive graphical user interface.
+            </p>
+            <ul>
+                <li>Home Page</li>
+                <li>Movie Selection</li>
+                <li>Seat Selection</li>
+                <li>Snack Selection</li>
+                <li>Booking Summary</li>
+                <li>Digital Ticket</li>
+            </ul>
+            <div class="demo-container">
+                <p><em>Insert application screenshots here.</em></p>
+            </div>
+        </section>
+
+        <section id="installation">
+            <h2>7. Installation & Setup</h2>
+<pre><code>1. Clone the repository.
+
+2. Open the solution in Visual Studio.
+
+3. Build the solution.
+
+4. Run CinemaManagementDemo.</code></pre>
+        </section>
+
+        <section id="usage">
+            <h2>8. How to Use the Library</h2>
+            <!-- Empty container for future usage example code -->
+        </section>
+
+        <section id="repository">
+            <h2>9. GitHub Repository</h2>
+            <p>
+                The complete source code, documentation, and demo application are available in the project repository.
+            </p>
+            <a href="https://github.com/erinazanie/CinemaManagementSystem.git" target="_blank" class="btn">
+                Open GitHub Repository
+            </a>
+        </section>
+
+        <section id="future-improvements">
+            <h2>10. Future Improvements</h2>
+
+            <ul>
+                <li>
+                    Improve library flexibility by reducing dependency on the current 
+                    Windows Forms interface, allowing integration with other front-end 
+                    applications such as web or mobile platforms.
+                </li>
+                <li>
+                    Implement a database management system to replace static JSON data 
+                    storage, allowing dynamic updates of movies, bookings, customers, 
+                    and transaction records.
+                </li>
+                <li>
+                    Introduce a service layer and API support to separate business 
+                    logic from the user interface, improving system scalability and 
+                    maintainability.
+                </li>
+                <li>
+                    Add authentication and role-based access control for customers 
+                    and cinema administrators.
+                </li>
+            </ul>
+        </section>
+
+        <footer>
+            <hr>
+            <p>
+                Cinema Management System Developer Documentation<br>
+                Prepared for the Object-Oriented Programming Final Project.
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        function toggleZoom() {
+            const img = document.getElementById('umlImg');
+            const overlay = document.getElementById('overlay');
+            img.classList.toggle('zoomed');
+            overlay.classList.toggle('active');
+        }
+
+        function closeZoom() {
+            const img = document.getElementById('umlImg');
+            const overlay = document.getElementById('overlay');
+            img.classList.remove('zoomed');
+            overlay.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
