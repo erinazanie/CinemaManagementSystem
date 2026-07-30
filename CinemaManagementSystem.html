@@ -5,269 +5,439 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Documentation - Cinema Management System</title>
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --bg: #f8fafc;
-            --sidebar-bg: #ffffff;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --border: #e2e8f0;
-            --code-bg: #1e293b;
-            --code-text: #f8fafc;
-        }
-
+        /* Global Netflix Styles */
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            color: var(--text-main);
-            background: var(--bg);
+            background-color: #141414;
+            color: #ffffff;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
         }
 
-        /* Side Navigation */
-        nav {
-            width: 280px;
-            height: 100vh;
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: #141414;
+            border-bottom: 1px solid #282828;
             position: sticky;
             top: 0;
-            background: var(--sidebar-bg);
-            border-right: 1px solid var(--border);
-            padding: 2rem 1.5rem;
-            overflow-y: auto;
-            flex-shrink: 0;
+            width: 100%;
+            z-index: 100;
         }
 
-        nav h2 {
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav li {
-            margin-bottom: 0.6rem;
-        }
-
-        nav a {
-            color: var(--text-muted);
+        .logo {
+            color: #e50914;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
             text-decoration: none;
-            font-size: 0.95rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
             font-weight: 500;
-            display: block;
-            padding: 0.4rem 0.6rem;
-            border-radius: 6px;
             transition: all 0.2s ease;
+            white-space: nowrap;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
         }
 
-        nav a:hover {
-            color: var(--primary);
-            background: #eff6ff;
+        .nav-links a:hover {
+            color: #ffffff;
+            border-bottom-color: #e50914;
         }
 
-        /* Main Content */
-        main {
-            flex: 1;
-            padding: 3rem 4rem;
-            max-width: 900px;
+        /* Main Container */
+        .doc-container {
+            padding: 40px 50px 50px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
         }
 
-        section {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
+        /* Cover Header Banner */
+        .cover-banner {
+            background-color: #1f1f1f;
+            border: 1px solid #333;
+            border-left: 5px solid #e50914;
+            border-radius: 8px;
+            padding: 35px;
+            margin-bottom: 40px;
         }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-top: 0;
-            color: var(--text-main);
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0.5rem;
+        .cover-banner h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 5px;
         }
 
-        h2 {
+        .cover-banner h3 {
+            font-size: 1.2rem;
+            color: #e50914;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .cover-banner .subtitle {
+            color: #aaa;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        /* Cover Info Table */
+        .cover-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            border-top: 1px solid #333;
+        }
+
+        .cover-table td {
+            padding: 10px 0;
+            color: #ccc;
+            border-bottom: 1px solid #222;
+            font-size: 0.95rem;
+        }
+
+        .cover-table td strong {
+            color: #ffffff;
+        }
+
+        /* Section Cards */
+        .doc-section {
+            background-color: #181818;
+            border: 1px solid #282828;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
             font-size: 1.5rem;
-            margin-top: 0;
-            color: var(--primary);
+            margin-bottom: 20px;
+            color: #e50914;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #282828;
+            padding-bottom: 10px;
         }
 
         p, li {
-            color: var(--text-muted);
+            color: #cccccc;
+            line-height: 1.6;
             font-size: 1rem;
         }
 
+        .doc-section p {
+            margin-bottom: 1rem;
+        }
+
+        .doc-section p:last-child {
+            margin-bottom: 0;
+        }
+
         ul, ol {
-            padding-left: 1.2rem;
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Tables (OOP Concepts) */
+        .netflix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: #141414;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #282828;
+        }
+
+        .netflix-table th, .netflix-table td {
+            padding: 14px 18px;
+            text-align: left;
+        }
+
+        .netflix-table th {
+            background-color: #222222;
+            color: #e50914;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .netflix-table td {
+            border-bottom: 1px solid #222222;
+            color: #dddddd;
+            font-size: 0.95rem;
+        }
+
+        .netflix-table tr:last-child td {
+            border-bottom: none;
         }
 
         /* Code Blocks */
-        pre {
-            background: var(--code-bg);
-            color: var(--code-text);
-            padding: 1.2rem;
-            border-radius: 8px;
+        .code-block {
+            background-color: #000000;
+            color: #00ff66;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            padding: 18px;
+            border-radius: 6px;
+            margin-top: 15px;
+            margin-bottom: 15px;
             overflow-x: auto;
+            border: 1px solid #282828;
             font-size: 0.9rem;
+            line-height: 1.5;
         }
 
-        code {
-            font-family: "Fira Code", Consolas, Monaco, monospace;
+        /* Demo Grid (Modules / Screenshots) */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        /* Container styling */
-        .svg-container {
-            border: 1px solid var(--border);
-            padding: 1.5rem;
+        .demo-card {
+            background-color: #141414;
             border-radius: 8px;
-            background: #ffffff;
-            margin: 1rem 0;
-            width: 100%;
-            overflow-x: auto;
-            box-sizing: border-box;
-            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            border: 1px solid #282828;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Click-to-Zoom Lightbox Effect */
-        .svg-container img {
+        .demo-card:hover {
+            transform: translateY(-6px);
+            border-color: #e50914;
+        }
+
+        .demo-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .demo-card-body {
+            padding: 15px;
+            flex: 1;
+        }
+
+        .demo-card-body h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .demo-card-body p {
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* Diagram Box */
+        .diagram-box {
+            background-color: #141414;
+            border: 1px solid #282828;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .diagram-box:hover {
+            border-color: #e50914;
+        }
+
+        .diagram-box img {
             max-width: 100%;
             height: auto;
-            display: block;
-            margin: 0 auto;
-            cursor: zoom-in;
-            transition: transform 0.2s ease;
+            border-radius: 4px;
         }
 
-        /* Fullscreen enlarged state */
-        .svg-container img.zoomed {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1);
-            max-width: 90vw;
-            max-height: 90vh;
-            z-index: 9999;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            background: #fff;
-            padding: 1rem;
-            border-radius: 8px;
-            cursor: zoom-out;
+        .diagram-hint {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #888;
         }
 
-        /* Dark overlay when zoomed */
-        .zoom-overlay {
+        /* Image Pop-out Modal */
+        .image-modal {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 9998;
-        }
-
-        .zoom-overlay.active {
-            display: block;
-        }
-
-        .demo-container {
-            border: 2px dashed var(--border);
-            background: #f1f5f9;
-            text-align: center;
-            padding: 2rem;
-            border-radius: 8px;
-        }
-
-        /* Table */
-        table {
             width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.92);
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(8px);
         }
 
-        th, td {
-            text-align: left;
-            padding: 0.75rem;
-            border-bottom: 1px solid var(--border);
+        .image-modal.active {
+            display: flex;
         }
 
-        th {
-            background: #f1f5f9;
-            color: var(--text-main);
+        .modal-toolbar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Cover Table Styling */
-        .cover-table td {
-            padding: 0.4rem 0.75rem;
+        .btn-modal-back {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-modal-back:hover {
+            background-color: #f40612;
+        }
+
+        .modal-close {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0 10px;
+        }
+
+        .modal-close:hover {
+            color: #e50914;
+        }
+
+        .modal-content-img {
+            max-width: 90%;
+            max-height: 78vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border: 2px solid #333;
+            object-fit: contain;
+        }
+
+        .modal-caption {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-align: center;
         }
 
         /* Buttons */
-        .btn {
+        .btn-red {
             display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
+            background-color: #e50914;
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
             text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s ease;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 10px;
         }
 
-        .btn:hover {
-            background: var(--primary-hover);
+        .btn-red:hover {
+            background-color: #f40612;
+            transform: scale(1.03);
         }
 
         footer {
             text-align: center;
-            margin-top: 3rem;
-            color: var(--text-muted);
+            padding: 40px;
+            border-top: 1px solid #282828;
+            color: #888;
             font-size: 0.9rem;
+            background-color: #141414;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <h2>Documentation</h2>
-        <ul>
-            <li><a href="#introduction">1. Introduction</a></li>
-            <li><a href="#system-overview">2. System Overview</a></li>
-            <li><a href="#project-structure">3. Project Structure</a></li>
-            <li><a href="#oop-concepts">4. OOP Concepts Used</a></li>
-            <li><a href="#uml-diagram">5. UML Class Diagram</a></li>
-            <li><a href="#demo">6. Demo Application</a></li>
-            <li><a href="#installation">7. Installation & Setup</a></li>
-            <li><a href="#usage">8. How to Use Library</a></li>
-            <li><a href="#repository">9. GitHub Repository</a></li>
-            <li><a href="#future-improvements">10. Future Improvements</a></li>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="logo">CINEMA CMS</a>
+        <ul class="nav-links">
+            <li><a href="#introduction">1. Intro</a></li>
+            <li><a href="#system-overview">2. Overview</a></li>
+            <li><a href="#project-structure">3. Structure</a></li>
+            <li><a href="#oop-concepts">4. OOP Concepts</a></li>
+            <li><a href="#uml-diagram">5. UML Diagram</a></li>
+            <li><a href="#demo">6. Demo App</a></li>
+            <li><a href="#installation">7. Installation</a></li>
+            <li><a href="#usage">8. Usage</a></li>
+            <li><a href="#repository">9. Repository</a></li>
+            <li><a href="#future-improvements">10. Future Plans</a></li>
         </ul>
     </nav>
 
-    <main>
-        <header class="cover">
-            <h1>Cinema Management System</h1>
+    <!-- Main Content Body -->
+    <div class="doc-container">
+
+        <!-- Cover Header -->
+        <header class="cover-banner">
             <h3>Developer Documentation</h3>
-            <p>Object-Oriented Programming Final Project</p>
-            <hr>
+            <h1>Cinema Management System</h1>
+            <p class="subtitle">Object-Oriented Programming Final Project</p>
+            
             <table class="cover-table">
-                <tr><td><strong>Course</strong></td><td>TFB1033/TEB1043: Object Oriented Programming - May 2026</td></tr>
-                <tr><td><strong>Language</strong></td><td>C# (.NET Windows Forms)</td></tr>
+                <tr>
+                    <td><strong>Course</strong></td>
+                    <td>TFB1033/TEB1043: Object Oriented Programming - May 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Language</strong></td>
+                    <td>C# (.NET Windows Forms)</td>
+                </tr>
                 <tr>
                     <td><strong>Prepared By</strong></td>
                     <td>
@@ -278,12 +448,16 @@
                         </ul>
                     </td>
                 </tr>
-                <tr><td><strong>Submission Date</strong></td><td>31 July 2026</td></tr>
+                <tr>
+                    <td><strong>Submission Date</strong></td>
+                    <td>31 July 2026</td>
+                </tr>
             </table>
         </header>
 
-        <section id="introduction">
-            <h2>1. Introduction</h2>
+        <!-- Section 1 -->
+        <section id="introduction" class="doc-section">
+            <h2 class="section-title">1. Introduction</h2>
             <p>
                 The Cinema Management System is an object-oriented software library
                 developed using C# and .NET Windows Forms. The project demonstrates
@@ -298,8 +472,9 @@
             </p>
         </section>
 
-        <section id="system-overview">
-            <h2>2. System Overview</h2>
+        <!-- Section 2 -->
+        <section id="system-overview" class="doc-section">
+            <h2 class="section-title">2. System Overview</h2>
             <p>The Cinema Management System consists of two main components:</p>
             <ul>
                 <li><strong>CinemaManagementLibrary</strong> – Contains all business logic and reusable classes.</li>
@@ -318,10 +493,11 @@
             </p>
         </section>
 
-        <section id="project-structure">
-            <h2>3. Project Structure</h2>
+        <!-- Section 3 -->
+        <section id="project-structure" class="doc-section">
+            <h2 class="section-title">3. Project Structure</h2>
             <p>Directory hierarchy and key files:</p>
-<pre><code>CinemaManagementSystem
+            <pre class="code-block"><code>CinemaManagementSystem
 │
 ├── CinemaManagementLibrary
 │   ├── Models
@@ -345,9 +521,10 @@
             </p>
         </section>
 
-        <section id="oop-concepts">
-            <h2>4. OOP Concepts Used</h2>
-            <table>
+        <!-- Section 4 -->
+        <section id="oop-concepts" class="doc-section">
+            <h2 class="section-title">4. OOP Concepts Used</h2>
+            <table class="netflix-table">
                 <thead>
                     <tr>
                         <th>Concept</th>
@@ -383,42 +560,71 @@
             </table>
         </section>
 
-        <section id="uml-diagram">
-            <h2>5. UML Class Diagram</h2>
+        <!-- Section 5 -->
+        <section id="uml-diagram" class="doc-section">
+            <h2 class="section-title">5. UML Class Diagram</h2>
             <p>
                 The UML Class Diagram illustrates the relationships between the major classes in the system.
                 It includes inheritance, composition, associations, and implemented interfaces.
-                <em>(Click image to expand)</em>
             </p>
 
-            <div class="zoom-overlay" id="overlay" onclick="closeZoom()"></div>
-
-            <div class="svg-container">
-                <img id="umlImg" src="Assets/UMLdiagram.svg" alt="UML Class Diagram" onclick="toggleZoom()">
+            <div class="diagram-box" onclick="openModal('Assets/UMLdiagram.svg', 'UML Class Diagram')">
+                <img src="Assets/UMLdiagram.svg" alt="UML Class Diagram">
+                <div class="diagram-hint">🔍 Click image to enlarge diagram</div>
             </div>
         </section>
 
-        <section id="demo">
-            <h2>6. Demo Application</h2>
+        <!-- Section 6 -->
+        <section id="demo" class="doc-section">
+            <h2 class="section-title">6. Demo Application</h2>
             <p>
-                The Windows Forms application demonstrates the usage of the Cinema Management Library through an interactive graphical user interface.
+                The Windows Forms Demo Application demonstrates how the Cinema Management
+                Library is used in a real cinema booking system. Click any module below to view screenshot previews.
             </p>
-            <ul>
-                <li>Home Page</li>
-                <li>Movie Selection</li>
-                <li>Seat Selection</li>
-                <li>Snack Selection</li>
-                <li>Booking Summary</li>
-                <li>Digital Ticket</li>
-            </ul>
-            <div class="demo-container">
-                <p><em>Insert application screenshots here.</em></p>
+
+            <div class="demo-grid">
+                <!-- Screenshot 1 -->
+                <div class="demo-card" onclick="openModal('Assets/1.png', '1. Browse Movies & Coming Soon')">
+                    <img src="Assets/1.png" alt="Browse Movies Screen">
+                    <div class="demo-card-body">
+                        <h3>1. Browse Movies</h3>
+                        <p>Browse movie posters, view basic information, and select a movie.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 2 -->
+                <div class="demo-card" onclick="openModal('Assets/2.png', '2. Movie Details & Seat Selection')">
+                    <img src="Assets/2.png" alt="Movie Details and Seat Selection">
+                    <div class="demo-card-body">
+                        <h3>2. Movie & Seat Selection</h3>
+                        <p>View synopsis, duration, showtimes, and select interactive seats.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 3 -->
+                <div class="demo-card" onclick="openModal('Assets/3.png', '3. Snack Selection & Customer Details')">
+                    <img src="Assets/3.png" alt="Snack Selection Screen">
+                    <div class="demo-card-body">
+                        <h3>3. Snack & Customer Details</h3>
+                        <p>Add concessions, enter personal details, and see instant price updates.</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 4 -->
+                <div class="demo-card" onclick="openModal('Assets/4.png', '4. Order Summary')">
+                    <img src="Assets/4.png" alt="Order Summary Screen">
+                    <div class="demo-card-body">
+                        <h3>4. Order Summary</h3>
+                        <p>Review final items, ticket costs, and customer information before confirmation.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="installation">
-            <h2>7. Installation & Setup</h2>
-<pre><code>1. Clone the repository.
+        <!-- Section 7 -->
+        <section id="installation" class="doc-section">
+            <h2 class="section-title">7. Installation & Setup</h2>
+            <pre class="code-block"><code>1. Clone the repository.
 
 2. Open the solution in Visual Studio.
 
@@ -427,24 +633,62 @@
 4. Run CinemaManagementDemo.</code></pre>
         </section>
 
-        <section id="usage">
-            <h2>8. How to Use the Library</h2>
-            <!-- Empty container for future usage example code -->
+        <!-- Section 8 -->
+        <section id="usage" class="doc-section">
+            <h2 class="section-title">8. How to Use the Library</h2>
+
+            <p>
+                The <strong>CinemaManagementLibrary</strong> project can be reused in other
+                C# applications by adding it as a project reference or referencing the
+                compiled class library (.dll).
+            </p>
+
+            <p>
+                Import the library into your project using:
+            </p>
+
+            <pre class="code-block"><code>using CinemaManagementLibrary;</code></pre>
+
+            <p>
+                The library provides reusable classes for managing different aspects of a
+                cinema booking system, including:
+            </p>
+
+            <ul>
+                <li><strong>Movie</strong> and <strong>ComingSoonMovie</strong> for managing movie information.</li>
+                <li><strong>Customer</strong> and <strong>Booking</strong> for handling customer bookings.</li>
+                <li><strong>ShowTime</strong>, <strong>Hall</strong>, <strong>Seat</strong>, and <strong>Ticket</strong> for scheduling and seat management.</li>
+                <li><strong>Snack</strong> and <strong>Item</strong> for food and beverage purchases.</li>
+                <li><strong>MovieRepository</strong> for loading and saving movie data.</li>
+            </ul>
+
+            <p>
+                These classes can be instantiated and combined to develop custom
+                cinema-related applications or to extend the functionality of the demo
+                application included in this project.
+            </p>
         </section>
 
-        <section id="repository">
-            <h2>9. GitHub Repository</h2>
+        <!-- Section 9 -->
+        <section id="repository" class="doc-section">
+            <h2 class="section-title">9. GitHub Repository</h2>
             <p>
-                The complete source code, documentation, and demo application are available in the project repository.
+                The complete source code, developer documentation, and Windows Forms demo
+                application are available in the project's GitHub repository.
             </p>
-            <a href="https://github.com/erinazanie/CinemaManagementSystem.git" target="_blank" class="btn">
-                Open GitHub Repository
+
+            <p style="color:#888;">
+                https://github.com/erinazanie/CinemaManagementSystem
+            </p>
+            <br>
+            <a href="https://github.com/erinazanie/CinemaManagementSystem.git" target="_blank" class="btn-red">
+                Open GitHub Repository ↗
             </a>
         </section>
 
-        <section id="future-improvements">
-            <h2>10. Future Improvements</h2>
-
+        <!-- Section 10 -->
+        <section id="future-improvements" class="doc-section">
+            <h2 class="section-title">10. Future Improvements</h2>
             <ul>
                 <li>
                     Improve library flexibility by reducing dependency on the current 
@@ -468,28 +712,35 @@
             </ul>
         </section>
 
-        <footer>
-            <hr>
-            <p>
-                Cinema Management System Developer Documentation<br>
-                Prepared for the Object-Oriented Programming Final Project.
-            </p>
-        </footer>
-    </main>
+    </div>
+
+    <!-- POP-OUT IMAGE MODAL -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-toolbar">
+            <button class="btn-modal-back" onclick="closeModal()">← Close Preview</button>
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+        </div>
+        <img id="modalImg" class="modal-content-img" src="" alt="Preview">
+        <div id="modalCaption" class="modal-caption"></div>
+    </div>
+
+    <footer>
+        <p>
+            Cinema Management System Developer Documentation<br>
+            Prepared for the Object-Oriented Programming Final Project.
+        </p>
+    </footer>
 
     <script>
-        function toggleZoom() {
-            const img = document.getElementById('umlImg');
-            const overlay = document.getElementById('overlay');
-            img.classList.toggle('zoomed');
-            overlay.classList.toggle('active');
+        /* Image Modal Functions */
+        function openModal(imgSrc, titleText) {
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('modalCaption').textContent = titleText;
+            document.getElementById('imageModal').classList.add('active');
         }
 
-        function closeZoom() {
-            const img = document.getElementById('umlImg');
-            const overlay = document.getElementById('overlay');
-            img.classList.remove('zoomed');
-            overlay.classList.remove('active');
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('active');
         }
     </script>
 </body>
